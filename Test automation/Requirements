@@ -1,0 +1,12 @@
+Funktionsbeschreibung
+
+1. Wortübereinstimmung:
+Ein “eigenständiges Wort” ist eine Zeichenfolge, die durch Leerzeichen getrennt ist.
+Vergleich ohne Berücksichtigung der Groß-/Kleinschreibung (z. B. “Cat” entspricht “cat”).
+
+2. Eingabebehandlung:
+Der Text wird anhand von Leerzeichen in Wörter zerlegt.
+Falls text oder target leer ist, wird 0 zurückgegeben.
+
+3. Zählung:
+Verwendet list.count() von Python, um exakte Übereinstimmungen des Zielwortes in der Wortliste zu zählen.
