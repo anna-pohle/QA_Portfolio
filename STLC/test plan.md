@@ -1,146 +1,212 @@
-# **Test Plan for Social Media Platform Enhancements**
+## **1. Produktanalyse**
 
-## **1. Analyze the Product**
+**1.1. Zielsetzung**
 
-### **Objective**
+- Online-Einkauf von Lebensmitteln leicht zugänglich machen
 
-The primary objective of the product is to enhance the existing social media platform by introducing new features and ensuring the smooth functioning of existing functionalities.
+**1.2. Benutzerbasis - Wer wird die Software benutzen?**
 
-### **User Base**
+- allgemeine Öffentlichkeit
+- demographische Hauptgruppe wahrscheinlich zwischen 13 Jahre (alt genug, um Lebensmittel einkaufen zu dürfen) und 70 Jahre alt (jung genug, um mit der allgemeinen Nutzung des Internets und genereller Website-Interaktion vertraut zu sein)
 
-The product will be used by existing and new users of the social media platform, including individuals aged 16 and above, who may opt for a premium subscription to remove ads and who can share personal stories on their profiles.
+**1.3. Hardware- und Software-Spezifikationen**
 
-### **Hardware and Software Specifications**
+- **Hardware-Anforderungen:**
+    - Geräte: PCs, Laptops, Smartphones, Tablets
+    - Spezifikationen: Standardkonfigurationen für Android- und iOS-Geräte, Desktops mit mindestens 4GB RAM, 2GHz Prozessor
+- **Software-Anforderungen:**
+    - Betriebssysteme: Windows, macOS, Android, iOS
+    - Browsers: Chrome, Firefox, Safari, Edge, Brave
+    - Abhängigkeiten:
+        - Backend-Dienste (Server, Datenbanken, APIs)
+        - Werbedienste von Drittanbietern (GoogleAds etc)
+        - Zahlungsgateways (auf Marketmate vorhanden: AMEX, Apple Pay, Google Pay, MasterCard, FacebookPay(?), VISA; 
+        ansonsten ggf noch relevant: PayPal, Klarna, Sofortüberweisung, Überweisung, Bitcoin)
 
-- **Hardware Requirements:**
-    - Devices: PCs, laptops, smartphones, tablets
-    - Specifications: Standard configurations for Android and iOS devices, desktops with minimum 4GB RAM, 2GHz processor
-- **Software Requirements:**
-    - Operating Systems: Windows, macOS, Android, iOS
-    - Browsers: Chrome, Firefox, Safari, Edge
-    - Dependencies: Backend services, third-party ad services, payment gateways
+**1.4. Produktfunktionalität - Bestehende und neu hinzukommende Funktionen**
 
-### **Product Functionality**
+**existent:**
 
-The product allows users to:
+- Anzeige aller Produkte, ihres Namens und Preises
+- Produkte nach Kategorie sortiert anzeigen
+- Anzeige der Produkte nach Preis geordnet
+- Suche nach Produkten nach Namen
+- Online-Einkauf von Lebensmitteln in unterschiedlichen Mengen
+- Online-Zahlung(en)
+- Ermöglichung der Erstellung von personalisierten Benutzerprofilen
+- Ermöglichung der Markierung von Produkten als Favoriten und Speicherung dieser Produkte im Benutzerprofil
+- Ermöglichung des Empfangs von (personalisierten?) Newslettern
+- Kontaktaufnahme mit dem Kundensupport (per Telefon und E-Mail)
+- dem Unternehmen in den sozialen Medien zu folgen (fb, insta, twitter, tiktok)
+- Lieferung der gekauften Waren
 
-- Register and log in
-- Add pictures to their profile
-- Find and add friends to favorites
-- Remove ads via paid subscription
-- Create and display profile stories
+**neu:**
 
-## **2. Design the Test Strategy**
+- Einschränkung des Zugangs zu (zB alkoholischen) Produkten nach Alter des Kunden
+- Möglichkeit zur Produktbewertung mittels Sternesystem & Freitexteingabe
+- Versandkostenanpassung je nach Bestellsumme
 
-### **Scope of Testing**
+## **2. Teststrategie entwerfen**
 
-- **In Scope:**
-    - Register and login functionality
-    - Add pictures to profile
-    - Find friends
-    - Add friends to favorites
-    - Age restriction for account creation
-    - Paid subscription to remove ads
-    - Profile story
-- **Out of Scope:**
-    - Backend database operations not affecting the user interface
-    - Third-party ad services integration (unless directly related to ad removal for subscribed users)
+**2.1. Umfang der Tests**
 
-### **Type of Testing**
+- **Umfang: Welche Funktionalitäten sind im Testumfang enthalten?**
+    - Anzeige aller Produkte, ihres Namens, Preises und ihrer Bewertung
+    - Anzeige der Produkte geordnet nach Kategorie
+    - Anzeige der Produkte nach Preis geordnet
+    - Suche nach Produkten nach Namen
+    - Einschränkung des Zugriffs auf Produkte aufgrund des Alters des Kunden
+    - Produkte bewerten (mit Sternesystem bzw Sternesystem & Freitext)
+    - kostenloser Versand bei Bestellwert > 20€
+    - Online-Einkauf von Lebensmitteln in unterschiedlichen Mengen durch Hinzufügen zu einem digitalen Einkaufswagen
+    - Ermöglichung der Erstellung von personalisierten Benutzerprofilen
+    - das Markieren von Produkten als Favoriten und das Speichern dieser Produkte im eigenen Benutzerprofil ermöglichen
+    - den Empfang von (personalisierten?) Newslettern ein- und ausschalten
+    - dem Unternehmen in den sozialen Medien folgen (fb, insta, twitter, tiktok)
+    
+- **Außerhalb des Geltungsbereichs: Was fällt nicht in den Bereich der Prüfung?**
+    - die tatsächliche Lieferung der gekauften Waren
+    - Kontaktaufnahme mit dem Kundensupport (per Telefon und E-Mail)
+    - Online-Zahlung(en)
+    - Leistungstests
+    - Lasttests
+    - Sicherheitstests
 
-- Functional Testing
-- Regression Testing
-- Performance Testing
-- Security Testing
-- Usability Testing
+**2.2. Geplante Testarten**💡
 
-### **Risks and Issues**
+*Welche Testarten werden für die neuen Funktionen benötigt?*
 
-- **Delays in development**
-    - Mitigation: Implement a buffer period in the schedule.
-- **Lack of test data**
-    - Mitigation: Create mock data sets for testing purposes.
-- **Resource unavailability**
-    - Mitigation: Identify backup resources.
+**tatsächlich**:
 
-### **Test Logistics**
+- Funktionstests
+- Usability-Tests/  Akzeptanztests
 
-- **Jane Smith** - Test Manager
-- **John Doe** - QA Engineer (Functional and Regression Testing)
-- **Alice Johnson** - QA Engineer (Performance and Security Testing)
-- **Robert Brown** - QA Engineer (Usability Testing)
-- **Maria Garcia** - End User for UAT
+**theoretisch aber auch:**
 
-## **3. Define Test Objectives**
+- Regressionstests
+- Lasttests
+- Sicherheitstests
+- explorative Tests
 
-### **Objectives**
+**2.3. Risiken und Gegenmaßnahmen**
 
-- **Functionality:** Ensure new features and existing functionalities work as intended.
-- **GUI:** Verify the graphical user interface for usability and consistency.
-- **Performance:** Confirm the system's performance under expected load conditions.
-- **Security:** Identify and mitigate potential security vulnerabilities.
-- **Usability:** Assess the user-friendliness of the platform.
+- **Entwicklungsverzögerungen**
+    
+    → Gegenmaßnahme: Zeitpuffer im Zeitplan einplanen
+    
+- **Fehlende Testdaten**
+    
+    → Gegenmaßnahme: Erstellen von Testdaten (Mock-Daten)
+    
+- **Ressourcenengpässe**
+    
+    → Gegenmaßnahme: Ersatzpersonen identifizieren und einplanen, Ggf. Crowdtesting implementieren
+    
+- **Testverzerrung durch Software-Abhängigkeiten**
+    
+    → Gegenmaßnahme: alle Testgeräte vor dem Testen aktualisieren
+    
+- **Fehler in den out-of-scope Bereichen**
+    
+    → Roll-out-Phase mit kleinerer Nutzergruppe vor dem großen Livegang(?)
+    
 
-### **Expected Outcomes**
+**2.4. Testlogistik (Testverantwortlichkeiten)**
 
-- **Functionality:** All features perform correctly according to specifications.
-- **GUI:** The interface is intuitive, responsive, and free of defects.
-- **Performance:** The platform meets performance benchmarks under load.
-- **Security:** No significant vulnerabilities are detected.
-- **Usability:** Users can navigate and use the platform easily.
+- **Testmanager** – Jane Smith
+- **QA Engineer (Funktion & Regression)** – John Doe
+- **QA Engineer (Performance & Sicherheit)** – Alice Johnson
+- **QA Engineer (Usability)** – Robert Brown
+- **Endanwender für UAT (User Acceptance Test)** – Maria Garcia
 
-## **4. Define Test Criteria**
+---
 
-### **Suspension Criteria**
+## **3. Testziele definieren**
 
-- Testing will be suspended if critical defects are found that block further testing.
-- Lack of necessary resources or test environment failures.
+**3.1. Ziele**
 
-### **Exit Criteria**
+- **Funktionalität:** Sicherstellen, dass neue und bestehende Funktionen wie vorgesehen arbeiten
+- **Benutzeroberfläche (GUI):** Überprüfung auf Bedienbarkeit, Konsistenz und Fehlerfreiheit
+- **Leistung (Performance):** Bestätigung, dass das System die erwartete Last bewältigt
+- **Sicherheit:** Identifikation und Absicherung potenzieller Schwachstellen
+- **Benutzbarkeit (Usability):** Bewertung der Nutzerfreundlichkeit und Zugänglichkeit
 
-- All planned tests have been executed.
-- Run Rate: At least 95% of all test cases have been executed.
-- Pass Rate: At least 90% of executed test cases have passed.
-- All critical and high-priority defects have been resolved and closed.
-- No severity 1 or severity 2 defects are open.
-- Performance metrics meet the defined standards.
-- Security vulnerabilities have been identified and addressed.
-- User acceptance testing has been completed, and sign-off has been obtained.
+**3.2. Erwartete Ergebnisse**
 
-## **5. Resource Planning**
+- Alle Funktionen verhalten sich gemäß Spezifikation
+- Die Oberfläche ist intuitiv, responsiv und fehlerfrei
+- Performanzkennzahlen werden unter Last eingehalten
+- Es bestehen keine sicherheitsrelevanten Schwachstellen
+- Die Anwendung ist leicht bedienbar für Endnutzer
 
-- **Human Resources:** QA team, development team, end users for UAT
-- **Hardware:** PCs, laptops, smartphones, tablets
-- **Software:** Browsers (Chrome, Firefox, Safari, Edge), operating systems (Windows, macOS, Android, iOS)
-- **Infrastructure:** Test environments, automation tools, performance testing tools
+---
 
-## **6. Plan Test Environment**
+## **4. Testkriterien definieren**
 
-- **Test Environments:** Real devices installed with real browsers and operating systems to simulate user conditions.
-- **Environments:** Development (DEV), Testing (TEST), Acceptance (ACC), Production (PROD)
+**4.1. Aussetzungskriterien (Suspension Criteria)**
 
-## **7. Schedule and Estimation**
+- Kritische Fehler blockieren die Fortsetzung der Tests
+- Fehlende Ressourcen oder Ausfall der Testumgebung
+- Insolvenz des Kunden/ Vertragsbruch etc.
+- signifikante Abweichung von den Requirements
+- externe Dependencies nicht erreichbar (zB Netzwerkprobleme)
+- wiederholte Abstürze während der Tests/ Software läuft instabil
 
-| Activity | Start Date | End Date | Environment | Responsible Person | Estimated Effort |
+**4.2. Abnahmekriterien (Exit Criteria)**
+
+- Alle geplanten Tests wurden ausgeführt
+- **Ausführungsrate:** Mindestens 95 % aller Testfälle wurden ausgeführt
+- **Bestehensquote:** Mindestens 90 % der ausgeführten Testfälle bestanden
+- Alle kritischen und hochpriorisierten Defekte sind geschlossen
+- Es bestehen keine offenen Fehler der Schweregrade 1 oder 2
+- Performanzanforderungen wurden erfüllt
+- Sicherheitslücken wurden behoben
+- Der Abnahmetest (UAT) wurde abgeschlossen und freigegeben
+- Abgabe-Deadline
+- entsprechende, übereinstimmende Meinung der Stakeholder
+
+---
+
+## **5. Ressourcenplanung**
+
+- **Personelle Ressourcen:** QA-Team, Entwicklerteam, Endanwender für UAT
+- **Hardware:** PCs, Laptops, Smartphones, Tablets
+- **Software:** Aktuelle Browser (Chrome, Firefox, Safari, Edge), Betriebssysteme (Windows, macOS, Android, iOS)
+- **Infrastruktur:** Testumgebungen, Automatisierungs-Tools, Performanztest-Werkzeuge, Testcase-Management-Software, Ticketsystem
+
+## **6. Testumgebung planen**
+
+- **Testgeräte:** Echte Endgeräte mit real installierten Betriebssystemen und Browsern zur realitätsnahen Simulation
+- **Umgebungen:**
+    - Entwicklung (DEV)
+    - Test (TEST)
+    - Abnahme (ACC – Acceptance)
+    - Produktion (PROD)
+
+## **7. Zeitplan und Aufwandsschätzung**
+
+| **Aktivität** | **Startdatum** | **Enddatum** | **Umgebung** | **Verantwortlich** | **Geplanter Aufwand** |
 | --- | --- | --- | --- | --- | --- |
-| Test Planning | 01/08/2024 | 05/08/2024 | All | Test Manager | 20 hours |
-| Test Case Design | 06/08/2024 | 15/08/2024 | All | QA Team | 40 hours |
-| Unit Testing | 16/08/2024 | 25/08/2024 | DEV | Development Team | 60 hours |
-| Integration Testing | 26/08/2024 | 30/08/2024 | TEST | QA Team | 30 hours |
-| System Testing | 01/09/2024 | 10/09/2024 | TEST | QA Team | 80 hours |
-| Regression Testing | 11/09/2024 | 15/09/2024 | TEST | QA Team | 40 hours |
-| Performance Testing | 16/09/2024 | 18/09/2024 | TEST | QA Team | 20 hours |
-| Security Testing | 19/09/2024 | 21/09/2024 | TEST | QA Team | 20 hours |
-| UAT | 22/09/2024 | 30/09/2024 | ACC | End Users | 50 hours |
-| Production Release | 01/10/2024 | 01/10/2024 | PROD | DevOps Team | 10 hours |
+| **Testplanung** | 01.08.2024 | 05.08.2024 | Alle | Testmanager | 20 Stunden |
+| **Testfalldesign** | 06.08.2024 | 15.08.2024 | Alle | QA-Team | 40 Stunden |
+| **Unittest** | 16.08.2024 | 25.08.2024 | DEV | Entwickler-Team | 60 Stunden |
+| **Integrationstest** | 26.08.2024 | 30.08.2024 | TEST | QA-Team | 30 Stunden |
+| **Systemtest** | 01.09.2024 | 10.09.2024 | TEST | QA-Team | 80 Stunden |
+| **Regressions-Test** | 11.09.2024 | 15.09.2024 | TEST | QA-Team | 40 Stunden |
+| **Performanztest** | 16.09.2024 | 18.09.2024 | TEST | QA-Team | 20 Stunden |
+| **Sicherheitstest** | 19.09.2024 | 21.09.2024 | TEST | QA-Team | 20 Stunden |
+| **Abnahmetest (UAT)** | 22.09.2024 | 30.09.2024 | ACC | Endanwender | 50 Stunden |
+| **Produktivfreigabe** | 01.10.2024 | 01.10.2024 | PROD | DevOps-Team | 10 Stunden |
 
-## **8. Determine Test Deliverables**
+---
 
-Documents/tools that must be created to support testing activities in the project:
+## **8. Testartefakte (Test-Deliverables)**
 
-- **Test Plan Document**
-- **Test Cases and Test Scripts**
-- **Test Data**
-- **Test Reports**
-- **Defect Reports**
-- **UAT Sign-off Document**
+Folgende Dokumente und Werkzeuge werden im Rahmen des Testprozesses erstellt und bereitgestellt:
+
+- Testplandokument
+- Testfälle und Testskripte
+- Testdaten
+- Testberichte
+- Fehlerberichte (Defect Reports)
+- UAT-Freigabedokumentation (Sign-off)
