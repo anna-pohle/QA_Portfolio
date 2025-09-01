@@ -1,63 +1,83 @@
-## **The software**
+### **Die Software: MarketMate**
 
-Social media platform, with the following existing functionalities:
+URL: https://grocerymate.masterschool.com/
 
-- Register and login functionality
-- Add pictures to your profile
-- Find friends
-- Add friends to favorites
-- Social media platform had ads
+Online-Shopping-Plattform mit den folgenden Funktionalitäten:
 
-## **New features**
+- Online Lebensmittel & Haushaltswaren kaufen & liefern lassen
+- altersbedingte Filterung der Artikel (Alkohol erst ab 18)
+- Nutzerprofile erstellen und Favoriten verwalten
+- Customer Support kontaktieren
+- Firma auf Social Media kontaktieren
 
-### **1. Age Restriction for Account Creation**
+### **Neue Funktionen (Features)**
 
-**Vague Requirement**:
+### 1. Produktbewertungssystem
 
-- Users should only be able to create an account if they meet the minimum age requirement of 16 years.
+**Unklare Anforderung:**
 
-**Questions**:
+Nutzer sollten in der Lage sein, Waren mit einem 5-Sterne-System zu bewerten und die Option haben, schriftliches Feedback zu hinterlassen
 
-1. How should the age verification be implemented? (e.g., date of birth input)
-2. What format should the date of birth be in? (e.g., MM/DD/YYYY)
-3. What error message should be displayed if the user is under 16?
-4. Are there any specific legal disclaimers or privacy notices required for age verification?
+**Fragen zur Anforderungsklärung:**
 
-**Detailed Requirement**:
+1. Muss man eingeloggt sein, um Sterne-Bewertungen oder schriftliche Bewertungen zu hinterlassen?
+2. Können Null Sterne vergeben werden?
+3. Gibt es eine Moderation oder einen Schimpfwortfilter für die schriftlichen Bewertungen?
+4. Gibt es eine Zeichenbegrenzung für die schriftliche Bewertung? Wenn ja: Wie& wann wird der Nutzer darüber informiert?
+5. Können Bilder/Markdown/Emojis in die schriftlichen Bewertungen eingefügt werden?
+6. Kann ein user das gleiche Produkt mehrfach bewerten?
 
-- During the registration process, users must provide their date of birth. The system should validate that the user is at least 16 years old on the date of account creation. If the user is under 16, an error message should be displayed, and the account should not be created.
+**Detaillierte Anforderung:**
 
-### **2. Paid Subscription to Remove Ads**
+Nicht eingeloggte User können keine Produkte bewerten.
+Nur eingeloggte Nutzer, die ein Produkt gekauft haben sollten in der Lage sein, Waren mit einem 5-Sterne-System zu bewerten und die Option haben, schriftliches Feedback ohne Moderation oder Schimpfwortfilter zu hinterlassen.
 
-**Vague Requirement**:
+Es ist möglich zwischen 1 und 5 Sterne auszuwählen, in dem man nach der erfolgten Lieferung zum Produkt navigiert, in dieser unter dem erworbenen Produkt die gewünschte Sternezahl anklickt darunter auf ‘Send’ klickt. 
+Ebenfalls innerhalb dieses Bewertungsfeldes gibt es die Möglichkeit vor dem Absenden der Sternebewertung, ein Textfeld mit einer schriftlichen Bewertung von maximal 500 Zeichen auszufüllen. Unterhalb des Eingabefeldes gibt es einen counter im Stil von “35/500” Zeichen, der in Echtzeit anzeigt, wie viele Zeichen dem Nutzer noch bleiben. Sobald 500 Zeichen erreicht sind, wird der counter rot und lautet “You cannot tell us more about this product.”. Es können nicht mehr als 500 Zeichen eingegeben werden.
+Eingegebener Text mit Markdown und Emojis werden später als leerer Text  angezeigt, können aber eingegeben werden; die eingegebene Sternebewertung wird in diesem Fall ganz normal angezeigt.
 
-- There should be an option for users to subscribe to a paid plan that allows them to use the platform without seeing any advertisements.
+Ein User kann pro Produkt nur einmal eine Bewertung abgeben, ungeachtet dessen, ob er:sie den Artikel ein weiteres Mal gekauft hat. In diesem Fall erscheint unter dem Produkt der Hinweis “You have already reviewed this product.”
 
-**Questions**:
+### **2. Altersbeschränkung für Alkoholische Produkte**
 
-1. Where should the option to subscribe to the paid plan be located? (e.g., account settings, homepage)
-2. What payment methods will be supported?
-3. What should happen if the payment fails?
-4. How should the system handle subscription renewals and cancellations?
-5. What pricing tiers will be offered for the subscription?
+**Unklare Anforderung:**
 
-**Detailed Requirement**:
+Alkoholische Produkte benötigen eine Altersprüfung. Ein Eingabefeld soll erscheinen, wenn der Nutzer zu den alkoholischen Produkten navigiert, mit dem überprüft wird, ob der User 18+ ist. User müssen ihr Alter eingeben, bevor sie auf die alkoholischen Produkte zugreifen können.
 
-- Users should have an option in their account settings to subscribe to a premium plan. Upon successful subscription and payment, advertisements should not be disabled across all areas of the platform. The system should also manage the subscription status, renewal reminders, and handle scenarios when the subscription expires or is canceled.
+**Fragen zur Anforderungsklärung:**
 
-### **3. Profile Story**
+1. Wie soll die Altersverifikation umgesetzt werden? (z. B. Eingabe des Geburtsdatums)
+2. In welchem Format soll das Geburtsdatum eingegeben werden? (z. B. TT/MM/JJJJ)
+3. Welche Fehlermeldung soll angezeigt werden, wenn der Nutzer unter 18 ist?
+4. Was soll das Verhalten der Website sein, wenn der User genau 18 ist?
+5. Welche Waren genau dürfen ohne Altersverifikation nicht angezeigt werden? (Zählt zB die Kategorie ‘Alkoholisches’ oder der tatsächliche Alkoholgehalt [z.B. bei 0,0%-Bier])
+6. Dürfen die Waren für U18-User nicht *angezeigt* oder nicht *auswählbar* sein?
 
-**Vague Requirement**:
+**Detaillierte Anforderung:**
 
-- Users should have the ability to write a brief story about themselves, which will be displayed under their account name on their profile. This story should have a character limit.
+Bereits nach dem Öffnen der Website muss der Nutzer sein Geburtsdatum in der Form DD-MM-YYYY angeben. Das System validiert, ob der Nutzer am Tag der Kontoerstellung auf den Tag genau mindestens 18 Jahre alt (oder älter) ist. Falls der Nutzer (auch nur einen Tag) unter 18 ist oder ein invalides Datum eingibt (zB eines, das Buchstaben beinhaltet oder im falschen Format eingegeben wird), wird eine Meldung angezeigt, dass der Nutzer minderjährig ist und nur ein eingeschränktes Sortiment sehen kann.
 
-**Questions**:
+In diesem Falle wird die gesamte Warengruppe “Alcohol”  nicht mehr angezeigt, der tatsächliche Alkoholgehalt des Produktes spielt dabei keine Rolle. Stattdessen erscheint eine freundliche Grafik, dass keine Produkte gefunden wurden sowie die folgende Meldung: “Underage Notice: You are underage and cannot view alcohol products. Please wait until you are 18 or older to access these products.”
 
-1. Where should the input field for the profile story be located?
-2. Should there be any formatting options (e.g., bold, italic)?
-3. What should happen if the user exceeds the character limit? (e.g., error message, truncated text)
-4. Are there any restrictions on the content of the story (e.g., profanity filter)?
+### **3. veränderte Versandkosten**
 
-**Detailed Requirement**:
+**Unklare Anforderung:**
 
-- Users should have an input field in their profile settings where they can enter a personal story or bio. This field should allow a maximum of 100 characters. The story should be displayed below the account name on the user's profile page. The system should provide feedback if the user attempts to enter more than 100 characters, preventing them from saving the excess characters. For the MVP there will be no profanity filter, this will be implemented later.
+Oberhalb eines bestimmen Betrages ist der Versand kostenfrei. Für Bestellungen unterhalb des Schwellwertes fallen Versandkosten an.
+
+**Fragen zur Anforderungsklärung:**
+
+1. Was genau ist der Schwellwert für kostenlosen Versand?
+2. Gib es andere Bedingungen, die für kostenlosen Versand erfüllt sein müssen? (zB Maße, Maximalgewicht, Zielland)
+3. Wie genau wird die Bestellsumme berechnet (werden zB Rabatte vorher schon abgezogen)?
+4. Sind die Versandkosten unterhalb des Schwellwertes einheitlich? Wenn nein: nach welchen Parametern ändern diese sich? (zB Maße, Gewicht, Versandart, Versandanbieter, Zielland)
+5. Was passiert, wenn ein Kunde einen Artikel zurückgibt & die ursprüngliche Bestellung damit unter den Schwellwert fällt? Muss er den Versand dann nachzahlen?
+
+**Detaillierte Anforderung:**
+
+**Oberhalb** eines Betrages von 20€ (also ab 20,01€) ist der Versand kostenfrei; hierbei gibt es keinerlei Beschränkungen, was Maße, Zusammensetzung oder Gewicht der Lieferung angeht. 
+Für Bestellungen **unterhalb** des Schwellwertes fallen 5€ Versandkosten an.
+
+Sollte ein Kunde einen Artikel zurückgeben & die ursprüngliche Bestellung damit unter den Schwellwert fallen, muss er lediglich das Retourenetikett zahlen.
+
+Sollte ein Kunde einen Artikel zurückgeben & die ursprüngliche Bestellung damit NICHT unter den Schwellwert fallen, ist das Retourenetikett kostenlos.
