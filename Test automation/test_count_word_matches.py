@@ -13,5 +13,6 @@ def edge_cases():
     return EDGE_CASES
 
 def test_edge_cases(edge_cases):
-    for text, target, expected in edge_cases:
+    @pytest.mark.parametrize("text, target, expected", EDGE_CASES)
+    def test_count_word_matches(text, target, expected):
         assert count_word_matches(text, target) == expected
