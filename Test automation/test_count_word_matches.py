@@ -3,7 +3,7 @@ import pytest
 
 TEST_CASES = [("The cat sat on the mat", "cat", 1), ("Dog dog DOG dOg", "dog", 4), ("Hello world", "world", 1), ("hello hello HELLO", "hello", 3), ("No matches here", "yes", 0), ("catcat cat catdog", "cat", 1), ("a a a", "a", 3)]
 EDGE_CASES = [("", "word", 0), ("hello world", "", 0), ("hello  world", "world", 1), (" cat ", "cat", 1), ("cat,dog cat", "cat", 2), ("x y z", "x", 1)]
-NEGATIVE_CASES = [(None, "word", TypeError), ("hello world", None, TypeError), (123, "word", TypeError), (["hello", "world"], "world", TypeError), ("hello world", ["world"], TypeError)]
+INVALID_CASES = [(None, "word", TypeError), ("hello world", None, TypeError), (123, "word", TypeError), (["hello", "world"], "world", TypeError), ("hello world", ["world"], TypeError)]
 
 
 # Part 1: Test Cases
