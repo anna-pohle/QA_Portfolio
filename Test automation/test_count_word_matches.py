@@ -3,6 +3,8 @@ import pytest
 
 TEST_CASES = [("The cat sat on the mat", "cat", 1), ("Dog dog DOG dOg", "dog", 4), ("Hello world", "world", 1), ("hello hello HELLO", "hello", 3), ("No matches here", "yes", 0), ("catcat cat catdog", "cat", 1), ("a a a", "a", 3)]
 EDGE_CASES = [("", "word", 0), ("hello world", "", 0), ("hello  world", "world", 1), (" cat ", "cat", 1), ("cat,dog cat", "cat", 2), ("x y z", "x", 1)]
+NEGATIVE_CASES = [(None, "word", TypeError), ("hello world", None, TypeError), (123, "word", TypeError), (["hello", "world"], "world", TypeError), ("hello world", ["world"], TypeError)]
+
 
 @pytest.mark.parametrize("text, target, expected", TEST_CASES)
 def test_count_word_matches(text, target, expected):
@@ -12,7 +14,17 @@ def test_count_word_matches(text, target, expected):
 def edge_cases():
     return EDGE_CASES
 
+@pytest.fixture
+def negative_cases():
+    return NEGATIVE_CASES
+
 def test_edge_cases(edge_cases):
     @pytest.mark.parametrize("text, target, expected", EDGE_CASES)
     def test_count_word_matches(text, target, expected):
         assert count_word_matches(text, target) == expected
+
+def test_negative_cases(negative_cases):
+    @pytest.mark.parametrize("text, target, expected", NEGATIVE_CASES)
+    def test_count_word_matches(text, target, expected):
+        with pytest.raises(TypeError):
+            assert count_word_matches(text, target) == expected
