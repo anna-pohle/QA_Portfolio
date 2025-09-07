@@ -30,13 +30,13 @@ Nutzer sollten in der Lage sein, Waren mit einem 5-Sterne-System zu bewerten und
 **Detaillierte Anforderung:**
 
 Nicht eingeloggte User können keine Produkte bewerten.
-Nur eingeloggte Nutzer, die ein Produkt gekauft haben sollten in der Lage sein, Waren mit einem 5-Sterne-System zu bewerten und die Option haben, schriftliches Feedback ohne Moderation oder Schimpfwortfilter zu hinterlassen.
+Nur eingeloggte Nutzer, die ein Produkt gekauft haben sollten in der Lage sein, Waren mit einem 5-Sterne-System zu bewerten und zusätzlich die Option haben, schriftliches Feedback ohne Moderation oder Schimpfwortfilter zu hinterlassen.
 
 Es ist möglich zwischen 1 und 5 Sterne auszuwählen, in dem man nach der erfolgten Lieferung zum Produkt navigiert, in dieser unter dem erworbenen Produkt die gewünschte Sternezahl anklickt darunter auf ‘Send’ klickt. 
 Ebenfalls innerhalb dieses Bewertungsfeldes gibt es die Möglichkeit vor dem Absenden der Sternebewertung, ein Textfeld mit einer schriftlichen Bewertung von maximal 500 Zeichen auszufüllen. Unterhalb des Eingabefeldes gibt es einen counter im Stil von “35/500” Zeichen, der in Echtzeit anzeigt, wie viele Zeichen dem Nutzer noch bleiben. Sobald 500 Zeichen erreicht sind, wird der counter rot und lautet “You cannot tell us more about this product.”. Es können nicht mehr als 500 Zeichen eingegeben werden.
-Eingegebener Text mit Markdown und Emojis werden später als leerer Text  angezeigt, können aber eingegeben werden; die eingegebene Sternebewertung wird in diesem Fall ganz normal angezeigt.
+Eingegebener Text mit Markdown und Emojis wird formatiert bzw. als Emoji angezeigt, die dazugehörige eingegebene Sternebewertung wird ganz normal angezeigt.
 
-Ein User kann pro Produkt nur einmal eine Bewertung abgeben, ungeachtet dessen, ob er:sie den Artikel ein weiteres Mal gekauft hat. In diesem Fall erscheint unter dem Produkt der Hinweis “You have already reviewed this product.”
+Ein User kann pro Produkt und Einkauf nur einmal eine Bewertung abgeben. Bei dem Versuch, eine zweite Bewertung für den Artikel abzugeben, erscheint unter dem Produkt der Hinweis “You have already reviewed this product.” Erst nach erneutem Kauf des Artikels kann eine weitere Bewertung abgegeben werden.
 
 ### **2. Altersbeschränkung für Alkoholische Produkte**
 
@@ -55,9 +55,11 @@ Alkoholische Produkte benötigen eine Altersprüfung. Ein Eingabefeld soll ersch
 
 **Detaillierte Anforderung:**
 
-Bereits nach dem Öffnen der Website muss der Nutzer sein Geburtsdatum in der Form DD-MM-YYYY angeben. Das System validiert, ob der Nutzer am Tag der Kontoerstellung auf den Tag genau mindestens 18 Jahre alt (oder älter) ist. Falls der Nutzer (auch nur einen Tag) unter 18 ist oder ein invalides Datum eingibt (zB eines, das Buchstaben beinhaltet oder im falschen Format eingegeben wird), wird eine Meldung angezeigt, dass der Nutzer minderjährig ist und nur ein eingeschränktes Sortiment sehen kann.
+Bereits nach dem Öffnen der Website muss der Nutzer sein Geburtsdatum in der Form DD-MM-YYYY angeben. Das System validiert, ob der Nutzer am Tag der Kontoerstellung auf den Tag genau mindestens 18 Jahre alt (oder älter) ist. Falls der Nutzer (auch nur einen Tag) unter 18 ist, wird eine Meldung angezeigt, dass der Nutzer minderjährig ist und nur ein eingeschränktes Sortiment sehen kann.
+In diesem Falle wird die gesamte Warengruppe “Alkohol”  nicht mehr angezeigt, der tatsächliche Alkoholgehalt des Produktes spielt dabei keine Rolle. Stattdessen erscheint eine freundliche Grafik, dass keine Produkte gefunden wurden sowie die folgende Meldung: „Hinweis für Minderjährige: Sie sind minderjährig und können keine Alkoholprodukte ansehen. Bitte warten Sie, bis Sie 18 Jahre oder älter sind, um auf diese Produkte zuzugreifen.“
 
-In diesem Falle wird die gesamte Warengruppe “Alcohol”  nicht mehr angezeigt, der tatsächliche Alkoholgehalt des Produktes spielt dabei keine Rolle. Stattdessen erscheint eine freundliche Grafik, dass keine Produkte gefunden wurden sowie die folgende Meldung: “Underage Notice: You are underage and cannot view alcohol products. Please wait until you are 18 or older to access these products.”
+Bei Eingabe eines invaliden Datums (zB eines, das Buchstaben beinhaltet oder im falschen Format eingegeben wird), wird eine Fehlermeldung angezeigt: “Bitte geben Sie das Datum im Format DD-MM-YYYY ein”
+
 
 ### **3. veränderte Versandkosten**
 
@@ -75,9 +77,10 @@ Oberhalb eines bestimmen Betrages ist der Versand kostenfrei. Für Bestellungen 
 
 **Detaillierte Anforderung:**
 
-**Oberhalb** eines Betrages von 20€ (also ab 20,01€) ist der Versand kostenfrei; hierbei gibt es keinerlei Beschränkungen, was Maße, Zusammensetzung oder Gewicht der Lieferung angeht. 
+**Oberhalb** eines Betrages von 20€ (also ab 20,01€) ist der Versand kostenfrei; hierbei gibt es keinerlei Beschränkungen, was Maße oder Gewicht der Lieferung angeht. 
 Für Bestellungen **unterhalb** des Schwellwertes fallen 5€ Versandkosten an.
 
 Sollte ein Kunde einen Artikel zurückgeben & die ursprüngliche Bestellung damit unter den Schwellwert fallen, muss er lediglich das Retourenetikett zahlen.
 
 Sollte ein Kunde einen Artikel zurückgeben & die ursprüngliche Bestellung damit NICHT unter den Schwellwert fallen, ist das Retourenetikett kostenlos.
+
