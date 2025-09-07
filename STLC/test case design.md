@@ -8,11 +8,11 @@ URL: https://grocerymate.masterschool.com/
 
 1. **Grenzwertanalyse**:
     - **Testfall**: Verifiziere die Seitennutzung mit einem Nutzer, der auf den Tag genau 18 Jahre alt ist
-    - **Eingabe**: “01-09-2007”
+    - **Eingabe**: [heutiges Datum] - 18 Jahre
     - **Erwartetes Ergebnis**: Der Nutzer kann das ganze Sortiment sehen.
 2. **Grenzwertanalyse**:
     - **Testfall**: Verifiziere die Seitennutzung mit einem Nutzer, der erst am kommenden Tag 18 Jahre alt wird
-    - **Eingabe**: “02-09-2007”
+    - **Eingabe**: [heutiges Datum] - 18 Jahre + 1 Tag
     - **Erwartetes Ergebnis:** Der Nutzer kann nur ein eingeschränktes Sortiment sehen (keine alkoholischen Getränke)
 3. **Äquivalenzklassenbildung**:
     - **Testfall**: Verifiziere die Seitennutzung mit einem Nutzer, der volljährig ist
@@ -89,16 +89,16 @@ Testfälle:
 5. **Fehlererwartungsmethode**:
     - **Testfall**: Der Bestellwert ist unwahrscheinlich groß.
     - **Eingabe**: 100.000€ Warenwert im Einkaufskorb beim checkout
-        - **Erwartetes** **Ergebnis**: Fehlermeldung und/oder Aufforderung, das Management zu kontaktieren, um einen B2B-account zu erstellen
+        - **Erwartetes** **Ergebnis**: Fehlermeldung “Sie können maximal Waren im Wert von 2000€ erwerben. Bitte reduzieren Sie den Bestellwert.”
 6. **Fehlererwartungsmethode**:
     - **Testfall**: Die Bestellmenge eines bestimmten Artikels ist unwahrscheinlich groß.
     - **Eingabe**: 100.000 Äpfel im Einkaufskorb beim checkout
-        - **Erwartetes** **Ergebnis**: Fehlermeldung und/oder Aufforderung, das Management zu kontaktieren, um einen B2B-account zu erstellen
+        - **Erwartetes** **Ergebnis**: “Sie können jeden Artikel maximal 100 mal im Warenkorb haben. Bitte reduzieren Sie die Bestellmenge.”
 7. **Anwendungsfalltest**:
     - **Testfall**: Der Schwellwert f.d. kostenlosen Versand wird erst über- und dann unterschritten.
     - **Eingabe**: Bestellwert 25,00€, dann werden Waren aus dem Einkaufswagen entfernt, bis der Bestellwert unter 20€ fällt.
     - **Erwartetes** **Ergebnis**: Der Versand sollte nach dem Entfernen der Waren wieder 5€ betragen.
 8. Fehlererwartungsmethode:
-    - **Testfall**: Nutzer:in gibt ungültige Kartendaten ein
-    - **Eingabe**: Kartennummer: “1234567891234563”, Name: “Erika Test”, Ablaufdatum: “09/2026”, Sicherheitsnummer: “456”
-    - **Erwartetes** **Ergebnis**: Zahlung wird abgelehnt
+    - **Testfall**: Nutzer:in gibt negative Anzahl Produkte ein, um Geld zu erhalten, statt zu bezahlen.
+    - **Eingabe**: “-50 Äpfel”
+    - **Erwartetes** **Ergebnis**: Eingabe negativer Werte nicht möglich
