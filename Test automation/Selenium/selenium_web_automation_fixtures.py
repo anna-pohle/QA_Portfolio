@@ -1,20 +1,3 @@
-"""
-Part 1: Web-Automatisierung mit Selenium
-
-1. Login-Automatisierung:
-   - URL: https://www.saucedemo.com/
-   - Benutzername: standard_user
-   - Passwort: secret_sauce
-   - Login-Button klicken
-   - Erfolgreichen Login prüfen (z. B. Seitentitel oder Produktseite)
-
-2. Produktprüfung:
-   - Nach Login das Produkt "Sauce Labs Backpack" auf der Seite suchen
-   - Assert, dass der Produktname angezeigt wird
-"""
-
-
-
 
 """
 Part 2: Parametrisierung und Fixtures
