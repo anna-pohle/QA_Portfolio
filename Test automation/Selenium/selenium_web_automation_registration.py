@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support.ui import Select
 
 import time
 
@@ -50,12 +51,15 @@ except:
 
 
 #6. Namen und E-Mail-Adresse eingeben
+name_input_value = "Test User"
+email_input_value = "test.user@whatever1.de"
+
 signup_name = driver.find_element(By.CSS_SELECTOR, "input[data-qa='signup-name']")
-signup_name.send_keys("Test User")
+signup_name.send_keys(name_input_value)
 
 
 signup_mail = driver.find_element(By.CSS_SELECTOR, "input[data-qa='signup-email']")
-signup_mail.send_keys("test.user@whatever.de")
+signup_mail.send_keys(email_input_value)
 
 
 #7. Auf die Schaltfläche „Signup“ klicken
@@ -70,11 +74,75 @@ print("Account Creation Header ist sichtbar.")
 
 
 #9. Details ausfüllen: Titel, Name, E-Mail, Passwort, Geburtsdatum
+
+account_creation_title = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[id='id_gender2']")))
+account_creation_title.click()
+
+#9a. Für Name und Email überprüfen, ob die eingegebenen Werte korrekt übernommen wurden.
+expected_values = {}
+expected_values["name"] = name_input_value
+expected_values["email"] = email_input_value
+print(expected_values)
+
+for element in expected_values:
+    current_value = driver.find_element(By.ID, element).get_attribute("value")
+    assert current_value == expected_values[element], f"Feld {element} wurde nicht korrekt übernommen!"
+    print(f"Feld '{element}' wurde korrekt übernommen: {current_value}")
+
+account_creation_password = driver.find_element(By.ID, "password")
+password_value = "Test_Password"
+account_creation_password.send_keys(password_value)
+
+#9b. Geburtsdatum aus dropdown-Menü(s) auswählen.
+date_of_birth_values = {"days": "20", "months": "2", "years":"2002"}
+
+for select_id, date_of_birth_value in date_of_birth_values.items():
+    dropdown_element = driver.find_element(By.ID, select_id)
+    select = Select(dropdown_element)
+    select.select_by_value(date_of_birth_value)
+
+    selected_value = select.first_selected_option.get_attribute("value")
+    assert selected_value == date_of_birth_value, f"Dropdown {select_id} stimmt nicht: {selected_value}"
+    print(f"{select_id} korrekt gesetzt auf {selected_value}")
+
+
 #10. Kontrollkästchen „Sign up for our newsletter!“ auswählen
+newsletter_checkbox = driver.find_element(By.ID, "newsletter")
+newsletter_checkbox.click()
+
+
 #11. Kontrollkästchen „Receive special offers from our partners!“ auswählen
+partner_optin_checkbox = driver.find_element(By.ID, "optin")
+partner_optin_checkbox.click()
+
+
 #12. Details ausfüllen: Vorname, Nachname, Firma, Adresse, Adresse2, Land, Bundesstaat, Stadt, Postleitzahl, Handynummer
+user_details = {
+    "first_name": "Test",
+    "last_name": "User",
+    "company": "Automation GmbH",
+    "address1": "Samplestreet 12",
+    "address2": "1st floor",
+    "country": "Australia",
+    "state": "Bavaria",
+    "city": "Sampletown",
+    "zipcode": "12345",
+    "mobile_number": "+4915112345678"
+}
+
+for user_detail, user_detail_value in user_details.items():
+    detail = driver.find_element(By.ID, user_detail)
+    detail.send_keys(user_detail_value)
+
+
 #13. Auf die Schaltfläche „Create Account“ klicken
+
+create_account_button = driver.find_element(By.CSS_SELECTOR, "button[data-qa='create-account']")
+create_account_button.click()
+time.sleep(200)
+
 #14. Überprüfen, dass „ACCOUNT CREATED!“ sichtbar ist
+
 #15. Auf die Schaltfläche „Continue“ klicken
 #16. Überprüfen, dass „Logged in as username“ sichtbar ist
 #17. Auf die Schaltfläche „Delete Account“ klicken

@@ -84,7 +84,7 @@
       <workItem from="1756664951681" duration="5448000" />
       <workItem from="1756849619200" duration="4408000" />
       <workItem from="1757435692878" duration="12123000" />
-      <workItem from="1757485292273" duration="11931000" />
+      <workItem from="1757485292273" duration="19733000" />
     </task>
     <servers />
   </component>
@@ -108,7 +108,7 @@
     <SUITE FILE_PATH="coverage/Testautomation$pytest_in_test_count_word_matches_py.coverage" NAME="pytest in test_count_word_matches.py Coverage Results" MODIFIED="1757367096632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation" />
     <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_fixtures.coverage" NAME="selenium_web_automation_fixtures Coverage Results" MODIFIED="1757443464999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$errorhandler.coverage" NAME="errorhandler Coverage Results" MODIFIED="1758112551164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/PyCharmMiscProject/.venv/lib/python3.12/site-packages/selenium/webdriver/remote" />
-    <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_registration.coverage" NAME="selenium_web_automation_registration Coverage Results" MODIFIED="1758116122213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
+    <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_registration.coverage" NAME="selenium_web_automation_registration Coverage Results" MODIFIED="1758123888961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$pytest_in_selenium_web_automation_fixtures_py.coverage" NAME="pytest in selenium_web_automation_fixtures.py Coverage Results" MODIFIED="1757446944170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$pytest_in_test_selenium_py.coverage" NAME="pytest in test_selenium.py Coverage Results" MODIFIED="1757439156095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
   </component>
