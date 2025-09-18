@@ -3,7 +3,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.ui import Select
-
 import time
 
 """
@@ -139,34 +138,35 @@ for user_detail, user_detail_value in user_details.items():
 
 create_account_button = driver.find_element(By.CSS_SELECTOR, "button[data-qa='create-account']")
 create_account_button.click()
-time.sleep(200)
+time.sleep(2)
 
 #14. Überprüfen, dass „ACCOUNT CREATED!“ sichtbar ist
+account_creation_msg = WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "h2[data-qa='account-created']")))
+assert account_creation_msg.is_displayed(), "Account-Erstellung fehlgeschlagen!"
+print("Account-Erstellung erfolgreich!")
+
 
 #15. Auf die Schaltfläche „Continue“ klicken
+continue_button = WebDriverWait(driver, 5). until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a[data-qa='continue-button']")))
+continue_button.click()
+
+
 #16. Überprüfen, dass „Logged in as username“ sichtbar ist
+logged_in_as = WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "li a:has(b)")))
+logged_in_as_who = logged_in_as.text.strip()
+assert name_input_value in logged_in_as_who, "Als falscher Nutzer eingeloggt!"
+
+
 #17. Auf die Schaltfläche „Delete Account“ klicken
+trash_button = driver.find_element(By.CSS_SELECTOR, "i[class='fa fa-trash-o']")
+trash_button.click()
+
+
 #18. Überprüfen, dass „ACCOUNT DELETED!“ sichtbar ist und auf „Continue“ klicken
+account_deletion_msg = WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "h2[data-qa='account-deleted']" )))
+assert account_deletion_msg.is_displayed(), "Account-Löschung fehlgeschlagen!"
+print("Account-Löschung erfolgreich!")
 
+continue_button = WebDriverWait(driver, 5). until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a[data-qa='continue-button']")))
+continue_button.click()
 
-"""
-
-#1. Launch the browser
-#2. Navigate to the URL: [https://automationexercise.com](http://automationexercise.com)
-#3. Verify that the homepage is displayed successfully
-#4. Click on the “Signup / Login” button
-#5. Verify that “New User Signup!” is visible
-#6. Enter name and email address
-#7. Click the “Signup” button
-#8. Verify that “ENTER ACCOUNT INFORMATION” is visible
-#9. Fill in details: title, name, email, password, date of birth
-#10. Check the box “Sign up for our newsletter!”
-#11. Check the box “Receive special offers from our partners!”
-#12. Fill in details: first name, last name, company, address, address2, country, state, city, zip code, mobile number
-#13. Click the “Create Account” button
-#14. Verify that “ACCOUNT CREATED!” is visible
-#15. Click the “Continue” button
-#16. Verify that “Logged in as username” is visible
-#17. Click the “Delete Account” button
-#18. Verify that “ACCOUNT DELETED!” is visible and click “Continue”
-"""

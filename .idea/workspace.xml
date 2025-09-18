@@ -37,6 +37,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Doctest via pytest in wait.py.executor": "Debug",
     "Python tests.Python tests in test_count_word_matches.py.executor": "Run",
     "Python tests.pytest in selenium_web_automation_fixtures.py.executor": "Run",
     "Python tests.pytest in test_count_word_matches.py.executor": "Run",
@@ -44,7 +45,7 @@
     "Python.errorhandler.executor": "Debug",
     "Python.selenium_web_automation_fixtures.executor": "Run",
     "Python.selenium_web_automation_login.executor": "Run",
-    "Python.selenium_web_automation_registration.executor": "Run",
+    "Python.selenium_web_automation_registration.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -84,7 +85,7 @@
       <workItem from="1756664951681" duration="5448000" />
       <workItem from="1756849619200" duration="4408000" />
       <workItem from="1757435692878" duration="12123000" />
-      <workItem from="1757485292273" duration="19733000" />
+      <workItem from="1757485292273" duration="29760000" />
     </task>
     <servers />
   </component>
@@ -102,14 +103,33 @@
       </map>
     </option>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Test automation/Selenium/selenium_web_automation_registration.py</url>
+          <line>155</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_login.coverage" NAME="selenium_web_automation_login Coverage Results" MODIFIED="1757439422610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$.coverage" NAME=" Coverage Results" MODIFIED="1756158678094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Testautomation$pytest_in_test_count_word_matches_py.coverage" NAME="pytest in test_count_word_matches.py Coverage Results" MODIFIED="1757367096632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation" />
     <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_fixtures.coverage" NAME="selenium_web_automation_fixtures Coverage Results" MODIFIED="1757443464999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$errorhandler.coverage" NAME="errorhandler Coverage Results" MODIFIED="1758112551164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/PyCharmMiscProject/.venv/lib/python3.12/site-packages/selenium/webdriver/remote" />
-    <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_registration.coverage" NAME="selenium_web_automation_registration Coverage Results" MODIFIED="1758123888961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
+    <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_registration.coverage" NAME="selenium_web_automation_registration Coverage Results" MODIFIED="1758208237505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$pytest_in_selenium_web_automation_fixtures_py.coverage" NAME="pytest in selenium_web_automation_fixtures.py Coverage Results" MODIFIED="1757446944170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$pytest_in_test_selenium_py.coverage" NAME="pytest in test_selenium.py Coverage Results" MODIFIED="1757439156095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
+    <SUITE FILE_PATH="coverage/Testautomation$Doctest_via_pytest_in_wait_py.coverage" NAME="Doctest via pytest in wait.py Coverage Results" MODIFIED="1758207706252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/PyCharmMiscProject/.venv/lib/python3.12/site-packages/selenium/webdriver/support" />
   </component>
 </project>
