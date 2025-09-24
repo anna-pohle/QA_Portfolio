@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c5c8f32-5427-49b8-ae70-1d7b594adb20" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test automation/Selenium/xpath_task_1.md" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Selenium/xpath_task_1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test automation/Selenium/xpath_task_2.md" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Selenium/xpath_task_2.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +86,7 @@
       <workItem from="1756849619200" duration="4408000" />
       <workItem from="1757435692878" duration="12123000" />
       <workItem from="1757485292273" duration="30314000" />
-      <workItem from="1758555929737" duration="6994000" />
+      <workItem from="1758555929737" duration="10121000" />
     </task>
     <servers />
   </component>
