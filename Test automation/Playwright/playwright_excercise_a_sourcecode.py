@@ -9,7 +9,7 @@ html_content = """
 
 <body>
     <header>
-        <img src="images/logo.png" alt="Company Logo" width="150">
+        <img src="logo.png" alt="Company Logo" width="150">
         <nav>
             <a href="/home">Home</a>
             <a href="/about">About Us</a>
@@ -37,7 +37,7 @@ ssword">
         </section>
         <section id="cart-section">
             <h2>Shopping Cart</h2>
-            <img src="images/cart.png" alt="Cart Icon" width="50">
+            <img src="cart.png" alt="Cart Icon" width="50">
         </section>
     </main>
     <footer>
