@@ -10,36 +10,46 @@ Web-Automatisierung eines Logins mit Selenium
 """
 
 from selenium import webdriver
-from selenium.common import NoSuchElementException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-import time
+
 
 PASSWORD = "secret_sauce"
 USERNAME = "standard_user"
 
-#setup the webdriver, open Chrome
-driver = webdriver.Chrome()
+def main():
 
-#open the webpage
-driver.get("https://www.saucedemo.com/")
+    #set up the webdriver, open Chrome
+    with webdriver.Chrome() as driver:
+        login_user(driver, PASSWORD, USERNAME)
+        verify_login_success(driver)
+        verify_item_displayed(driver)
 
-#find login fields
-login_box_username = driver.find_element(By.ID, "user-name")
-login_box_password = driver.find_element(By.ID, "password")
 
-#login with the provided credentials
-login_box_username.send_keys(USERNAME)
-login_box_password.send_keys(PASSWORD)
+def login_user(driver, PASSWORD, USERNAME):
 
-#click Login button
-login_button = driver.find_element(By.ID, "login-button")
-login_button.click()
+    #open the webpage
+    driver.get("https://www.saucedemo.com/")
 
-time.sleep(2)
+    #find login fields
+    login_box_username = driver.find_element(By.ID, "user-name")
+    login_box_password = driver.find_element(By.ID, "password")
 
-#assert successful login
-webpage = driver.current_url
-assert webpage == "https://www.saucedemo.com/inventory.html", "Login not successful!"
+    #login with the provided credentials
+    login_box_username.send_keys(USERNAME)
+    login_box_password.send_keys(PASSWORD)
+
+    #click Login button
+    login_button = driver.find_element(By.ID, "login-button")
+    login_button.click()
+
+    WebDriverWait(driver, 4).until(EC.url_contains("/inventory.html"))
+
+
+def verify_login_success(driver):
+    #assert successful login
+    assert driver.current_url == "https://www.saucedemo.com/inventory.html", "Login not successful!"
 
 
 """
@@ -48,11 +58,10 @@ assert webpage == "https://www.saucedemo.com/inventory.html", "Login not success
    - Assert, dass der Produktname angezeigt wird
 """
 
-#find the desired article
-sauce_lab_backpack = driver.find_element(By.LINK_TEXT, "Sauce Labs Backpack")
+def verify_item_displayed(driver):
 
-#assert the desired article is displayed
-assert sauce_lab_backpack != NoSuchElementException, "Article not found!"
+    #find the desired article
+    sauce_lab_backpack = driver.find_element(By.LINK_TEXT, "Sauce Labs Backpack")
 
-#close the browser
-driver.quit()
+    #assert the desired article is displayed
+    assert sauce_lab_backpack.is_displayed(), "Article not found!"
