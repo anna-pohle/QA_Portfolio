@@ -184,4 +184,5 @@ def verify_account_deletion(driver):
     continue_button = WebDriverWait(driver, 5). until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a[data-qa='continue-button']")))
     continue_button.click()
 
-main()
+if __name__ == "__main__":
+    main()

@@ -19,7 +19,6 @@ PASSWORD = "secret_sauce"
 USERNAME = "standard_user"
 
 def main():
-
     #set up the webdriver, open Chrome
     with webdriver.Chrome() as driver:
         login_user(driver, PASSWORD, USERNAME)
@@ -50,6 +49,7 @@ def login_user(driver, PASSWORD, USERNAME):
 def verify_login_success(driver):
     #assert successful login
     assert driver.current_url == "https://www.saucedemo.com/inventory.html", "Login not successful!"
+    print("Login Successful!")
 
 
 """
@@ -59,9 +59,13 @@ def verify_login_success(driver):
 """
 
 def verify_item_displayed(driver):
-
     #find the desired article
     sauce_lab_backpack = driver.find_element(By.LINK_TEXT, "Sauce Labs Backpack")
 
     #assert the desired article is displayed
     assert sauce_lab_backpack.is_displayed(), "Article not found!"
+    print("Item displayed!")
+
+
+if __name__ == "__main__":
+    main()
