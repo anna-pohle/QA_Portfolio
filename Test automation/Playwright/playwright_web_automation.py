@@ -3,14 +3,23 @@
 from playwright.sync_api import sync_playwright
 from playwright_excercise_a_sourcecode import html_content
 
+def main(html_content):
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False, slow_mo=5000)
+        page = browser.new_page()
+        page.set_content(html_content)
 
-with sync_playwright() as p:
-    browser = p.chromium.launch(headless=False, slow_mo=3000)
-    page = browser.new_page()
+        click_login(page)
+        enter_login_data(page)
+        enter_search_input(page)
+        click_signup(page)
+        #click_aboutus(page)
+        #click_images(page)
 
-    page.set_content(html_content)
+    print("Script completed!")
 
 
+def click_login(page):
     """
     # Exercise 1 — Click the Login Button
     # Goal: Click the Login button using a role locator.
@@ -23,6 +32,7 @@ with sync_playwright() as p:
     login_button.click()
 
 
+def enter_login_data(page):
     """
     Exercise 2 — Fill Email and Password
     Goal: Use label locators to fill:
@@ -38,6 +48,7 @@ with sync_playwright() as p:
         page.get_by_label(label).fill(value)
 
 
+def enter_search_input(page):
     """
     Exercise 3 — Fill Search Box
     Playwright Exercise 2
@@ -48,6 +59,7 @@ with sync_playwright() as p:
     search_box.fill("Playwright Guide")
 
 
+def click_signup(page):
     """
     Exercise 4 — Click Sign Up
     Goal: Click the Sign Up button using a role locator.
@@ -55,6 +67,7 @@ with sync_playwright() as p:
     signup_btn = page.get_by_role("button", name="Sign Up")
     signup_btn.click()
 
+def click_aboutus(page):
     """
     Exercise 5 — Click Links
     Goal: Use text locators to click the About Us link in the header navigation.
@@ -62,7 +75,7 @@ with sync_playwright() as p:
     about_link = page.get_by_text("About Us")
     about_link.click()
 
-
+def click_images(page):
     """
     Exercise 6 — Click Images
     Goal: Click the Company Logo and Cart Icon using alt text locators.
@@ -76,15 +89,15 @@ with sync_playwright() as p:
     # cart_icon.click
 
 
-    """
-    Exercise 7 — Combined Actions (Challenge)
-    """
-    # 1. Fill email and password (label locators)
-    # 2. Click Login button (role locator)
-    # 3. Fill search input (placeholder locator)
-    # 4. Click Search button (role locator)
-    # 5. Click Cart Icon (alt text locator)
+"""
+Exercise 7 — Combined Actions (Challenge)
+"""
+# 1. Fill email and password (label locators)
+# 2. Click Login button (role locator)
+# 3. Fill search input (placeholder locator)
+# 4. Click Search button (role locator)
+# 5. Click Cart Icon (alt text locator)
 
-    browser.close()
 
-print("Script completed!")
+if __name__ == "__main__":
+    main(html_content)
