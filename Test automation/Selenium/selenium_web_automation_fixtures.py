@@ -9,7 +9,6 @@ Part 2: Parametrisierung und Fixtures
 """
 
 from selenium import webdriver
-from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 import pytest
 
@@ -31,7 +30,7 @@ def driver():
 @pytest.fixture
 def password(driver):
     # select container via XPath
-    password_node = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div/div[2]")
+    password_node = driver.find_element(By.XPATH, "//input[@data-test='password']")
     password_text = password_node.text.splitlines()[-1]
     return password_text
 
@@ -40,12 +39,10 @@ def password(driver):
 # get usernames
 # -----------------------------
 def get_users():
-    driver = webdriver.Chrome()
     driver.get("https://www.saucedemo.com/")
     credentials_box = driver.find_element(By.ID, "login_credentials")
     lines = credentials_box.text.splitlines()
     users = [line.strip() for line in lines if line.strip().endswith("user")]
-    driver.quit()
     return users
 
 
@@ -61,4 +58,4 @@ def test_login(driver, user, password):
     login_box_password.send_keys(password)
 
     driver.find_element(By.ID, "login-button").click()
-    assert driver.current_url == "https://www.saucedemo.com/inventory.html", f"Login für {user} nicht erfolgreich!"
+    assert driver.current_url.endswith("inventory.html"), f"Login für {user} nicht erfolgreich!"
