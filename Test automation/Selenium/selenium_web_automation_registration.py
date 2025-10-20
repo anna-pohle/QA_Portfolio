@@ -1,14 +1,26 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.ui import Select
-import time
 
 """
 Part 3: Benutzer mit Selenium registrieren
 """
+
+#0. Konstanten und Hilfsfunktionen
+
 URL = "http://automationexercise.com"
+SHORT_WAIT = 2
+DEFAULT_WAIT = 5
+EXTENDED_WAIT = 15
+
+def wait_for_visible(driver, locator, timeout):
+    return WebDriverWait(driver, timeout).until(EC.visibility_of_element_located(locator))
+
+def wait_for_clickable(driver, locator, timeout):
+    return WebDriverWait(driver, timeout).until(EC.element_to_be_clickable(locator))
 
 #1. Browser starten
 def main():
@@ -29,17 +41,16 @@ def open_webpage_handle_cookies(driver):
 
     #2a. ggf. Cookie-Alert handlen
     try:
-        consent_button = WebDriverWait(driver, 5).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "button.fc-button.fc-cta-consent.fc-primary-button")))
+        consent_button = wait_for_clickable(driver, (By.CSS_SELECTOR, "button.fc-button.fc-cta-consent.fc-primary-button"), DEFAULT_WAIT)
         consent_button.click()
         print("Cookie-Banner geschlossen.")
 
-    except:
-        print("Kein Cookie-Banner gefunden.")
+    except TimeoutException:
+        print("Kein Cookie-Banner gefunden (Timeout).")
 
 
 def verify_landing_page(driver):
-    #3. Überprüfen, dass die Startseite erfolgreich sichtbar ist
+    #3. Überprüfen, dass die Startseite sichtbar ist
     body_element = driver.find_element(By.TAG_NAME, "body")
     assert body_element.text.strip() != "", "Body not displayed correctly!"
 
@@ -51,8 +62,7 @@ def signup_user(driver):
 
     #5. Überprüfen, dass „New User Signup!“ sichtbar ist
     try:
-        signup_form = WebDriverWait(driver, 5).until(
-            EC.visibility_of_element_located((By.XPATH, "//h2[text()='New User Signup!']")))
+        signup_form = wait_for_visible(driver, (By.XPATH, "//h2[text()='New User Signup!']"), DEFAULT_WAIT)
         print("Signup-Formular ist sichtbar.")
 
     except:
@@ -78,12 +88,11 @@ def signup_user(driver):
 
 def enter_signup_data(driver, name_input_value, email_input_value):
     #8. Überprüfen, dass „ENTER ACCOUNT INFORMATION“ sichtbar ist
-    account_creation_header = WebDriverWait(driver, 2).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, "h2.title.text-center")))
+    account_creation_header = wait_for_visible(driver, (By.CSS_SELECTOR, "h2.title.text-center"), SHORT_WAIT)
     print("Account Creation Header ist sichtbar.")
 
     #9. Details ausfüllen: Titel, Name, E-Mail, Passwort, Geburtsdatum
-    account_creation_title = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[id='id_gender2']")))
+    account_creation_title = wait_for_clickable(driver, (By.CSS_SELECTOR, "input[id='id_gender2']"), DEFAULT_WAIT)
     account_creation_title.click()
 
     #9a. Für Name und Email überprüfen, ob die eingegebenen Werte korrekt übernommen wurden.
@@ -148,23 +157,22 @@ def submit_signup_data(driver):
 
     create_account_button = driver.find_element(By.CSS_SELECTOR, "button[data-qa='create-account']")
     create_account_button.click()
-    time.sleep(2)
 
 
 def verify_account_creation(driver):
     #14. Überprüfen, dass „ACCOUNT CREATED!“ sichtbar ist
-    account_creation_msg = WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "h2[data-qa='account-created']")))
+    account_creation_msg = wait_for_visible(driver, (By.CSS_SELECTOR, "h2[data-qa='account-created']"), DEFAULT_WAIT)
     assert account_creation_msg.is_displayed(), "Account-Erstellung fehlgeschlagen!"
     print("Account-Erstellung erfolgreich!")
 
     #15. Auf die Schaltfläche „Continue“ klicken
-    continue_button = WebDriverWait(driver, 5). until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a[data-qa='continue-button']")))
+    continue_button = wait_for_visible(driver, (By.CSS_SELECTOR, "a[data-qa='continue-button']"), DEFAULT_WAIT)
     continue_button.click()
 
 
 def verify_logged_in_account_details(driver, name_input_value):
     #16. Überprüfen, dass „Logged in as username“ sichtbar ist
-    logged_in_as = WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "li a:has(b)")))
+    logged_in_as = wait_for_visible(driver, (By.CSS_SELECTOR, "li a:has(b)"), DEFAULT_WAIT)
     logged_in_as_who = logged_in_as.text.strip()
     assert name_input_value in logged_in_as_who, "Als falscher Nutzer eingeloggt!"
 
@@ -177,11 +185,11 @@ def delete_account(driver):
 
 def verify_account_deletion(driver):
     #18. Überprüfen, dass „ACCOUNT DELETED!“ sichtbar ist und auf „Continue“ klicken
-    account_deletion_msg = WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "h2[data-qa='account-deleted']" )))
+    account_deletion_msg = wait_for_visible(driver, (By.CSS_SELECTOR, "h2[data-qa='account-deleted']" ), DEFAULT_WAIT)
     assert account_deletion_msg.is_displayed(), "Account-Löschung fehlgeschlagen!"
     print("Account-Löschung erfolgreich!")
 
-    continue_button = WebDriverWait(driver, 5). until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a[data-qa='continue-button']")))
+    continue_button = wait_for_visible(driver, (By.CSS_SELECTOR, "a[data-qa='continue-button']"), DEFAULT_WAIT)
     continue_button.click()
 
 if __name__ == "__main__":
