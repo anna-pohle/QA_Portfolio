@@ -51,8 +51,7 @@ def open_webpage_handle_cookies(driver):
 
 def verify_landing_page(driver):
     #3. Überprüfen, dass die Startseite sichtbar ist
-    body_element = driver.find_element(By.TAG_NAME, "body")
-    assert body_element.text.strip() != "", "Body not displayed correctly!"
+    assert "Automation Exercise" in driver.title, "Falsche Startseite geladen!"
 
 
 def signup_user(driver):
