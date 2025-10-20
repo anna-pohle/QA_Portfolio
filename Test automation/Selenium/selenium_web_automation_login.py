@@ -17,6 +17,7 @@ from selenium.webdriver.common.by import By
 
 PASSWORD = "secret_sauce"
 USERNAME = "standard_user"
+DEFAULT_WAIT = 4
 
 def main():
     #set up the webdriver, open Chrome
@@ -26,7 +27,7 @@ def main():
         verify_item_displayed(driver)
 
 
-def login_user(driver, PASSWORD, USERNAME):
+def login_user(driver, password, username):
 
     #open the webpage
     driver.get("https://www.saucedemo.com/")
@@ -43,12 +44,12 @@ def login_user(driver, PASSWORD, USERNAME):
     login_button = driver.find_element(By.ID, "login-button")
     login_button.click()
 
-    WebDriverWait(driver, 4).until(EC.url_contains("/inventory.html"))
+    WebDriverWait(driver, DEFAULT_WAIT).until(EC.url_contains("/inventory.html"))
 
 
 def verify_login_success(driver):
     #assert successful login
-    assert driver.current_url == "https://www.saucedemo.com/inventory.html", "Login not successful!"
+    assert driver.current_url.endswith("/inventory.html"), "Login not successful!"
     print("Login Successful!")
 
 
