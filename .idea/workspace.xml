@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c5c8f32-5427-49b8-ae70-1d7b594adb20" name="Changes" comment="">
+    <list default="true" id="8c5c8f32-5427-49b8-ae70-1d7b594adb20" name="Changes" comment="first commit for Testing Project, built structure/scaffold">
+      <change afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pytest.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Testautomation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Testautomation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Anna_Pohle &lt;anna.pohle@posteo.de&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
@@ -43,19 +50,24 @@
     "Python tests.pytest in test_selenium.py.executor": "Run",
     "Python.errorhandler.executor": "Debug",
     "Python.excercise_a.executor": "Run",
+    "Python.playwright_web_automation_registration.executor": "Run",
     "Python.selenium_web_automation_fixtures.executor": "Run",
     "Python.selenium_web_automation_login.executor": "Run",
     "Python.selenium_web_automation_registration.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "/Users/anna/PycharmProjects/Testautomation/Test automation",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -64,6 +76,7 @@
       <recent name="$PROJECT_DIR$/Test automation" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests" />
       <recent name="$PROJECT_DIR$/Test automation/Playwright/images" />
       <recent name="$PROJECT_DIR$/Test automation/Selenium" />
       <recent name="$PROJECT_DIR$/Test automation/PyTest" />
@@ -93,7 +106,51 @@
       <workItem from="1757485292273" duration="30314000" />
       <workItem from="1758555929737" duration="10907000" />
       <workItem from="1758811256721" duration="8707000" />
+      <workItem from="1759144099126" duration="65065000" />
+      <workItem from="1761382005956" duration="3802000" />
+      <workItem from="1761389947157" duration="8655000" />
     </task>
+    <task id="LOCAL-00001" summary="encapsulated Waits in helper functions">
+      <option name="closed" value="true" />
+      <created>1760978470896</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760978470896</updated>
+    </task>
+    <task id="LOCAL-00002" summary="refactored assert">
+      <option name="closed" value="true" />
+      <created>1760978552763</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1760978552763</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactored assert">
+      <option name="closed" value="true" />
+      <created>1760979159247</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1760979159247</updated>
+    </task>
+    <task id="LOCAL-00004" summary="implemented playwright for all functions">
+      <option name="closed" value="true" />
+      <created>1760983400332</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1760983400332</updated>
+    </task>
+    <task id="LOCAL-00005" summary="first commit for Testing Project, built structure/scaffold">
+      <option name="closed" value="true" />
+      <created>1760984349752</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1760984349752</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +167,14 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="removed magic numbers, enhanced URL-check" />
+    <MESSAGE value="encapsulated Waits in helper functions" />
+    <MESSAGE value="refactored assert" />
+    <MESSAGE value="implemented playwright for all functions" />
+    <MESSAGE value="first commit for Testing Project, built structure/scaffold" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit for Testing Project, built structure/scaffold" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <default-breakpoints>
@@ -122,13 +187,14 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_login.coverage" NAME="selenium_web_automation_login Coverage Results" MODIFIED="1757439422610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
-    <SUITE FILE_PATH="coverage/Testautomation$excercise_a.coverage" NAME="excercise_a Coverage Results" MODIFIED="1758818714599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Playwright" />
+    <SUITE FILE_PATH="coverage/Testautomation$excercise_a.coverage" NAME="excercise_a Coverage Results" MODIFIED="1759243867641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Playwright" />
+    <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_login.coverage" NAME="selenium_web_automation_login Coverage Results" MODIFIED="1760972734730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$.coverage" NAME=" Coverage Results" MODIFIED="1756158678094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Testautomation$pytest_in_test_count_word_matches_py.coverage" NAME="pytest in test_count_word_matches.py Coverage Results" MODIFIED="1757367096632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation" />
     <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_fixtures.coverage" NAME="selenium_web_automation_fixtures Coverage Results" MODIFIED="1757443464999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$errorhandler.coverage" NAME="errorhandler Coverage Results" MODIFIED="1758112551164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/PyCharmMiscProject/.venv/lib/python3.12/site-packages/selenium/webdriver/remote" />
-    <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_registration.coverage" NAME="selenium_web_automation_registration Coverage Results" MODIFIED="1758208502766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
+    <SUITE FILE_PATH="coverage/Testautomation$playwright_web_automation_registration.coverage" NAME="playwright_web_automation_registration Coverage Results" MODIFIED="1760983326339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Playwright" />
+    <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_registration.coverage" NAME="selenium_web_automation_registration Coverage Results" MODIFIED="1760979052477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$pytest_in_selenium_web_automation_fixtures_py.coverage" NAME="pytest in selenium_web_automation_fixtures.py Coverage Results" MODIFIED="1757446944170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$pytest_in_test_selenium_py.coverage" NAME="pytest in test_selenium.py Coverage Results" MODIFIED="1757439156095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$Doctest_via_pytest_in_wait_py.coverage" NAME="Doctest via pytest in wait.py Coverage Results" MODIFIED="1758207706252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/PyCharmMiscProject/.venv/lib/python3.12/site-packages/selenium/webdriver/support" />
