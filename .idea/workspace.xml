@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c5c8f32-5427-49b8-ae70-1d7b594adb20" name="Changes" comment="first commit for Testing Project, built structure/scaffold">
-      <change afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pytest.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Testautomation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Testautomation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +106,7 @@
       <workItem from="1758811256721" duration="8707000" />
       <workItem from="1759144099126" duration="65065000" />
       <workItem from="1761382005956" duration="3802000" />
-      <workItem from="1761389947157" duration="8655000" />
+      <workItem from="1761389947157" duration="13655000" />
     </task>
     <task id="LOCAL-00001" summary="encapsulated Waits in helper functions">
       <option name="closed" value="true" />
@@ -150,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760984349752</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="first commit for Testing Project, built structure/scaffold">
+      <option name="closed" value="true" />
+      <created>1761582629911</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761582629911</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
