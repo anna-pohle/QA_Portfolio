@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8c5c8f32-5427-49b8-ae70-1d7b594adb20" name="Changes" comment="first commit for Testing Project, built structure/scaffold">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/authentification_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/authentification_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/base_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/test_registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/test_registration.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,37 +41,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Doctest via pytest in wait.py.executor": "Debug",
-    "Python tests.Python tests in test_count_word_matches.py.executor": "Run",
-    "Python tests.pytest in selenium_web_automation_fixtures.py.executor": "Run",
-    "Python tests.pytest in test_count_word_matches.py.executor": "Run",
-    "Python tests.pytest in test_selenium.py.executor": "Run",
-    "Python.errorhandler.executor": "Debug",
-    "Python.excercise_a.executor": "Run",
-    "Python.playwright_web_automation_registration.executor": "Run",
-    "Python.selenium_web_automation_fixtures.executor": "Run",
-    "Python.selenium_web_automation_login.executor": "Run",
-    "Python.selenium_web_automation_registration.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/anna/PycharmProjects/Testautomation/Test automation",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Doctest via pytest in wait.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests in test_count_word_matches.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in selenium_web_automation_fixtures.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_count_word_matches.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_selenium.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.errorhandler.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.excercise_a.executor&quot;: &quot;Run&quot;,
+    &quot;Python.playwright_web_automation_registration.executor&quot;: &quot;Run&quot;,
+    &quot;Python.selenium_web_automation_fixtures.executor&quot;: &quot;Run&quot;,
+    &quot;Python.selenium_web_automation_login.executor&quot;: &quot;Run&quot;,
+    &quot;Python.selenium_web_automation_registration.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/anna/PycharmProjects/Testautomation/Test automation&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Test automation" />
@@ -107,6 +110,7 @@
       <workItem from="1759144099126" duration="65065000" />
       <workItem from="1761382005956" duration="3802000" />
       <workItem from="1761389947157" duration="13655000" />
+      <workItem from="1761674157470" duration="13030000" />
     </task>
     <task id="LOCAL-00001" summary="encapsulated Waits in helper functions">
       <option name="closed" value="true" />
