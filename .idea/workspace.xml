@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c5c8f32-5427-49b8-ae70-1d7b594adb20" name="Changes" comment="first commit for Testing Project, built structure/scaffold">
+      <change afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/utils/__init__.py.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/authentification_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/authentification_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/base_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/__init__.py.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/test_registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/test_registration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/utils/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +112,7 @@
       <workItem from="1759144099126" duration="65065000" />
       <workItem from="1761382005956" duration="3802000" />
       <workItem from="1761389947157" duration="13655000" />
-      <workItem from="1761674157470" duration="13030000" />
+      <workItem from="1761674157470" duration="14048000" />
     </task>
     <task id="LOCAL-00001" summary="encapsulated Waits in helper functions">
       <option name="closed" value="true" />
