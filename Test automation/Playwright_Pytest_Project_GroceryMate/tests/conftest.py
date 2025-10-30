@@ -4,6 +4,7 @@ import pytest
 
 
 @pytest.fixture
+#öffne browser & stelle ein page Objekt zur Verfügung
 def browser_page():
     with sync_playwright() as playwright:
         #öffne browser
@@ -16,5 +17,6 @@ def browser_page():
         browser.close()
 
 @pytest.fixture
+# Nimm das Page-Objekt & mach daraus eine fertige AuthPage
 def auth_page(browser_page):
     return AuthPage
