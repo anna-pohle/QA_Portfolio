@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c5c8f32-5427-49b8-ae70-1d7b594adb20" name="Changes" comment="first commit for Testing Project, built structure/scaffold">
-      <change afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/utils/__init__.py.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/__init__.py.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/test_registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/test_registration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/utils/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +47,7 @@
     &quot;Python tests.Python tests in test_count_word_matches.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest in selenium_web_automation_fixtures.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest in test_count_word_matches.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_registration.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest in test_selenium.py.executor&quot;: &quot;Run&quot;,
     &quot;Python.errorhandler.executor&quot;: &quot;Debug&quot;,
     &quot;Python.excercise_a.executor&quot;: &quot;Run&quot;,
@@ -112,7 +110,8 @@
       <workItem from="1759144099126" duration="65065000" />
       <workItem from="1761382005956" duration="3802000" />
       <workItem from="1761389947157" duration="13655000" />
-      <workItem from="1761674157470" duration="14048000" />
+      <workItem from="1761674157470" duration="18557000" />
+      <workItem from="1761803338035" duration="2229000" />
     </task>
     <task id="LOCAL-00001" summary="encapsulated Waits in helper functions">
       <option name="closed" value="true" />
@@ -199,16 +198,17 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Testautomation$playwright_web_automation_registration.coverage" NAME="playwright_web_automation_registration Coverage Results" MODIFIED="1760983326339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Playwright" />
+    <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_registration.coverage" NAME="selenium_web_automation_registration Coverage Results" MODIFIED="1760979052477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
+    <SUITE FILE_PATH="coverage/Testautomation$pytest_in_selenium_web_automation_fixtures_py.coverage" NAME="pytest in selenium_web_automation_fixtures.py Coverage Results" MODIFIED="1757446944170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$excercise_a.coverage" NAME="excercise_a Coverage Results" MODIFIED="1759243867641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Playwright" />
     <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_login.coverage" NAME="selenium_web_automation_login Coverage Results" MODIFIED="1760972734730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$.coverage" NAME=" Coverage Results" MODIFIED="1756158678094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Testautomation$pytest_in_test_count_word_matches_py.coverage" NAME="pytest in test_count_word_matches.py Coverage Results" MODIFIED="1757367096632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation" />
     <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_fixtures.coverage" NAME="selenium_web_automation_fixtures Coverage Results" MODIFIED="1757443464999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$errorhandler.coverage" NAME="errorhandler Coverage Results" MODIFIED="1758112551164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/PyCharmMiscProject/.venv/lib/python3.12/site-packages/selenium/webdriver/remote" />
-    <SUITE FILE_PATH="coverage/Testautomation$playwright_web_automation_registration.coverage" NAME="playwright_web_automation_registration Coverage Results" MODIFIED="1760983326339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Playwright" />
-    <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_registration.coverage" NAME="selenium_web_automation_registration Coverage Results" MODIFIED="1760979052477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
-    <SUITE FILE_PATH="coverage/Testautomation$pytest_in_selenium_web_automation_fixtures_py.coverage" NAME="pytest in selenium_web_automation_fixtures.py Coverage Results" MODIFIED="1757446944170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$pytest_in_test_selenium_py.coverage" NAME="pytest in test_selenium.py Coverage Results" MODIFIED="1757439156095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
+    <SUITE FILE_PATH="coverage/Testautomation$pytest_in_test_registration_py.coverage" NAME="pytest in test_registration.py Coverage Results" MODIFIED="1761803830718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests" />
     <SUITE FILE_PATH="coverage/Testautomation$Doctest_via_pytest_in_wait_py.coverage" NAME="Doctest via pytest in wait.py Coverage Results" MODIFIED="1758207706252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/PyCharmMiscProject/.venv/lib/python3.12/site-packages/selenium/webdriver/support" />
   </component>
 </project>
