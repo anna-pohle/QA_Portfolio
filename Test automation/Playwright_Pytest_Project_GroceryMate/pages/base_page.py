@@ -2,6 +2,7 @@ from playwright.sync_api import sync_playwright, Page, expect
 
 URL = "https://grocerymate.masterschool.com/"
 DEFAULT_TIMEOUT = 5000  # 5 Sekunden in Millisekunden
+EXTENDED_TIMEOUT = 10000  # 10 Sekunden in Millisekunden
 
 class BasePage:
     def __init__(self, page: Page):

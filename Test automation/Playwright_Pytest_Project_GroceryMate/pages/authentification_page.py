@@ -1,5 +1,5 @@
 # registration page elements & actions
-from base_page import BasePage
+from pages.base_page import BasePage, DEFAULT_TIMEOUT
 
 
 class AuthPage(BasePage):
@@ -9,7 +9,7 @@ class AuthPage(BasePage):
     #Locators
     EMAIL_INPUT_FIELD = "input[type='email']"
     PASSWORD_INPUT_FIELD = "input[type='password']"
-    NAME_INPUT_FIELD = "input[name='Full Name']"
+    NAME_INPUT_FIELD = "input[placeholder='Full Name']"
 
     SIGN_IN_BUTTON = "button[type='submit']"
     CREATE_ACCOUNT_LINK = "role=link[name='Create a new account']"
@@ -35,5 +35,7 @@ class AuthPage(BasePage):
     def create_account(self, email, password, name):
         self.navigate(self.URL)
         self.page.click(self.CREATE_ACCOUNT_LINK)
+        self.page.wait_for_selector(self.NAME_INPUT_FIELD, state="visible", timeout=DEFAULT_TIMEOUT)
         self._enter_login_data(email, password, name)
         self.page.click(self.SIGN_IN_BUTTON)
+
