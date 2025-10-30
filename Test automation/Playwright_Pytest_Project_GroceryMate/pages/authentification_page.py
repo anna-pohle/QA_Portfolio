@@ -1,6 +1,6 @@
 # registration page elements & actions
 from pages.base_page import BasePage, DEFAULT_TIMEOUT
-
+from pages.store_page import StorePage
 
 class AuthPage(BasePage):
     #Klassenattribut
@@ -8,6 +8,11 @@ class AuthPage(BasePage):
 
     #Locators
     EMAIL_INPUT_FIELD = "input[type='email']"
+
+    emailField: Locator = page.locator("input[type='email']")
+    emailField.fill()
+
+
     PASSWORD_INPUT_FIELD = "input[type='password']"
     NAME_INPUT_FIELD = "input[placeholder='Full Name']"
 
@@ -17,25 +22,20 @@ class AuthPage(BasePage):
 
     #Methods
 
-    #intern
-    def _enter_login_data(self, email, password, name=None):
+    #extern
+    def login(self, email, password) -> StorePage:
+        self.navigate(self.URL)
         self.page.fill(self.EMAIL_INPUT_FIELD, email)
         self.page.fill(self.PASSWORD_INPUT_FIELD, password)
-        if name and self.is_visible(self.NAME_INPUT_FIELD):
-            self.page.fill(self.NAME_INPUT_FIELD, name)
-
-
-    #extern
-    def login(self, email, password):
-        self.navigate(self.URL)
-        self._enter_login_data(email, password)
         self.page.click(self.SIGN_IN_BUTTON)
+        return StorePage(self.page)
 
 
-    def create_account(self, email, password, name):
+    def create_account(self, email, password, name) -> None:
         self.navigate(self.URL)
         self.page.click(self.CREATE_ACCOUNT_LINK)
-        self.page.wait_for_selector(self.NAME_INPUT_FIELD, state="visible", timeout=DEFAULT_TIMEOUT)
-        self._enter_login_data(email, password, name)
+        self.page.fill(self.EMAIL_INPUT_FIELD, email)
+        self.page.fill(self.PASSWORD_INPUT_FIELD, password)
+        self.page.fill(self.NAME_INPUT_FIELD, name)
         self.page.click(self.SIGN_IN_BUTTON)
 

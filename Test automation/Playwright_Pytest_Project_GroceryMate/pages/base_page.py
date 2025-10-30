@@ -1,4 +1,4 @@
-from playwright.sync_api import sync_playwright, Page, expect
+from playwright.sync_api import Page
 
 URL = "https://grocerymate.masterschool.com/"
 DEFAULT_TIMEOUT = 5000  # 5 Sekunden in Millisekunden

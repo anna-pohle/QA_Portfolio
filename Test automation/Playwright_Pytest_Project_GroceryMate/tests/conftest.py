@@ -1,5 +1,4 @@
 from playwright.sync_api import sync_playwright
-from pages.authentification_page import AuthPage
 import pytest
 
 
@@ -15,8 +14,3 @@ def browser_page():
         yield page
         #aufräumen: browser wieder schließen
         browser.close()
-
-@pytest.fixture
-# Nimm das Page-Objekt & mach daraus eine fertige AuthPage
-def auth_page(browser_page):
-    return AuthPage
