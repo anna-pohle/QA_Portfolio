@@ -1,17 +1,15 @@
 from playwright.sync_api import Page
-
-URL = "https://grocerymate.masterschool.com/"
-DEFAULT_TIMEOUT = 5000  # 5 Sekunden in Millisekunden
-EXTENDED_TIMEOUT = 10000  # 10 Sekunden in Millisekunden
+from system_config import BASE_URL, BROWSER_CONFIG
 
 class BasePage:
     def __init__(self, page: Page):
         self.page = page
-        self.timeout = DEFAULT_TIMEOUT
+        self.timeout = BROWSER_CONFIG.get("timeout")
+        self.base_url = BASE_URL  # Speichere BASE_URL als Attribut
 
-    def navigate(self, URL: str):
+    def navigate(self, url: str):
         # Navigation zur URL
-        self.page.goto(URL, timeout=self.timeout)
+        self.page.goto(url, timeout=self.timeout)
         self.page.wait_for_load_state("networkidle")
 
     def click(self, locator: str):
@@ -26,3 +24,4 @@ class BasePage:
     def is_visible(self, locator: str) -> bool:
         # Sichtbarkeits-Check
         return self.page.locator(locator).is_visible(timeout=self.timeout)
+
