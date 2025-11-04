@@ -17,7 +17,7 @@ class BasePage:
         self.page.locator(locator).click(timeout=self.timeout)
 
     def fill(self, locator: str, text: str) -> None:
-        # Text eingeben
+        # Text in Input-Feld eingeben
         element = self.page.locator(locator)
         element.fill(text, timeout=self.timeout)
 

@@ -14,7 +14,7 @@ class HomePage(BasePage):
 
     # Methoden
     def go_to_homepage(self) -> HomePage:
-        super().navigate(self.URL)  # Direkter Aufruf der Homepage per URL
+        self.navigate(self.URL)  # Direkter Aufruf der Homepage per URL
         return HomePage(self.page)
 
     # Methoden, die components nutzen
