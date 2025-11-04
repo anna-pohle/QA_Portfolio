@@ -15,9 +15,9 @@ class StorePage(BasePage):
 
 
     # Methoden
-    def go_to_storepage(self):
+    def go_to_storepage(self) -> StorePage:
         super().navigate(self.URL)  # Direkter Aufruf möglich
-        return StorePage
+        return StorePage(self.page)
 
     def _get_product_card(self, product_name: str):
         """Hilfsfunktion: findet die Produktkarte anhand des Alt-Textes des Produktbildes
@@ -33,17 +33,17 @@ class StorePage(BasePage):
         product_card.click()
         return ProductPage(self.page)
 
-    def add_to_cart(self, product_name: str, quantity: int = 1) -> self:
+    def add_to_cart(self, product_name: str, quantity: int = 1) -> StorePage:
         # Fügt die gewünschte Menge (default =1) zum Warenkorb hinzu
         product_card = self._get_product_card(product_name)
         product_card.locator("input.quantity").fill(str(quantity))
         product_card.get_by_role("button", name="Add to Cart").click()
-        return self
+        return StorePage(self.page)
 
-    def add_to_favorites(self, product_name: str) -> self:
+    def add_to_favorites(self, product_name: str) -> StorePage:
         product_card = self._get_product_card(product_name)
         product_card.get_by_role("button", name="❤").click()
-        return self
+        return StorePage(self.page)
 
     def go_to_cart(self) -> CheckoutPage:
         # Öffnet die Warenkorb-Ansicht

@@ -13,13 +13,15 @@ class HomePage(BasePage):
         self.navbar = Navbar(page) # Navbar als Component
 
     # Methoden
-    def go_to_homepage(self):
+    def go_to_homepage(self) -> HomePage:
         super().navigate(self.URL)  # Direkter Aufruf der Homepage per URL
-        return self
+        return HomePage(self.page)
 
     # Methoden, die components nutzen
     def go_to_login(self) -> AuthPage:
-        return self.header.click_auth()  # Nutzt Header-Component
+        self.header.click_auth()  # Nutzt Header-Component
+        return AuthPage(self.page)
 
     def go_to_store_page(self) -> StorePage:
-        return self.navbar.click_store()
+        self.navbar.click_store()
+        return StorePage(self.page)

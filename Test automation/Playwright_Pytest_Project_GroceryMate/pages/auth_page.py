@@ -20,9 +20,9 @@ class AuthPage(BasePage):
         self.logout_button = self.page.get_by_role("button", name="Logout")
 
     #Methods
-    def go_to_login(self):
+    def go_to_login(self) -> AuthPage:
         super().navigate(self.URL)
-        return self
+        return AuthPage(self.page)
 
     def login(self, email, password) -> HomePage:
         self.navigate(self.URL)
@@ -31,7 +31,7 @@ class AuthPage(BasePage):
         self.sign_in_button.click()
         return HomePage(self.page)
 
-    def create_account(self, email, password, name) -> self :
+    def create_account(self, email, password, name) -> AuthPage :
         self.navigate(self.URL)
         self.create_account_link.click()
         self.email_input_field.fill(email)
@@ -40,7 +40,8 @@ class AuthPage(BasePage):
         self.sign_in_button.click()
         return self
 
-    def logout(self, logout_button):
+    def logout(self, logout_button) -> AuthPage:
         self.navigate(self.URL)
         self.logout_button.click()
+        return self
 

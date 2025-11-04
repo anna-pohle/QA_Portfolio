@@ -1,8 +1,8 @@
 class Navbar:
     def __init__(self, page):
         self.page = page
-        self.store_button = page.locator("")
-        self.home_button = page.locator("")
+        self.store_button = page.locator("link", name="Shop")
+        self.home_button = self.page.get_by_role("link", name="Home")
 
 
     def click_store(self):
