@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c5c8f32-5427-49b8-ae70-1d7b594adb20" name="Changes" comment="first commit for Testing Project, built structure/scaffold">
+    <list default="true" id="8c5c8f32-5427-49b8-ae70-1d7b594adb20" name="Changes" comment="refactored checkout_page &amp; product page">
+      <change afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/test_buy_product.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/authentification_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/authentification_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/base_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/store_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/store_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/checkout_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/checkout_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/test_data_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/testdata_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/test_login.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/test_registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/test_registration.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +38,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -86,10 +89,11 @@
       <recent name="$PROJECT_DIR$/Test automation" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate" />
+      <recent name="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/" />
       <recent name="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests" />
       <recent name="$PROJECT_DIR$/Test automation/Playwright/images" />
       <recent name="$PROJECT_DIR$/Test automation/Selenium" />
-      <recent name="$PROJECT_DIR$/Test automation/PyTest" />
     </key>
   </component>
   <component name="RunManager">
@@ -195,7 +199,71 @@
       <option name="project" value="LOCAL" />
       <updated>1761582629911</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="work session w patrick">
+      <option name="closed" value="true" />
+      <created>1761830704872</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761830704872</updated>
+    </task>
+    <task id="LOCAL-00008" summary="configured &amp; refactored pages">
+      <option name="closed" value="true" />
+      <created>1762209197098</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762209197098</updated>
+    </task>
+    <task id="LOCAL-00009" summary="configured &amp; refactored components">
+      <option name="closed" value="true" />
+      <created>1762209214889</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1762209214889</updated>
+    </task>
+    <task id="LOCAL-00010" summary="configured &amp; refactored config-files">
+      <option name="closed" value="true" />
+      <created>1762209246865</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1762209246865</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactored code">
+      <option name="closed" value="true" />
+      <created>1762209267341</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1762209267341</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added checkout data">
+      <option name="closed" value="true" />
+      <created>1762213568150</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1762213568150</updated>
+    </task>
+    <task id="LOCAL-00013" summary="completed checkout_page">
+      <option name="closed" value="true" />
+      <created>1762213602879</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1762213602879</updated>
+    </task>
+    <task id="LOCAL-00014" summary="refactored checkout_page &amp; product page">
+      <option name="closed" value="true" />
+      <created>1762214773791</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1762214773791</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,30 +286,23 @@
     <MESSAGE value="refactored assert" />
     <MESSAGE value="implemented playwright for all functions" />
     <MESSAGE value="first commit for Testing Project, built structure/scaffold" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit for Testing Project, built structure/scaffold" />
+    <MESSAGE value="work session w patrick" />
+    <MESSAGE value="configured &amp; refactored pages" />
+    <MESSAGE value="configured &amp; refactored components" />
+    <MESSAGE value="configured &amp; refactored config-files" />
+    <MESSAGE value="refactored code" />
+    <MESSAGE value="added checkout data" />
+    <MESSAGE value="completed checkout_page" />
+    <MESSAGE value="refactored checkout_page &amp; product page" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored checkout_page &amp; product page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/test_registration.py</url>
-          <line>14</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/authentification_page.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/store_page.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/pages/base_page.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests/test_buy_product.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -257,7 +318,7 @@
     <SUITE FILE_PATH="coverage/Testautomation$playwright_web_automation_registration.coverage" NAME="playwright_web_automation_registration Coverage Results" MODIFIED="1760983326339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Playwright" />
     <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_registration.coverage" NAME="selenium_web_automation_registration Coverage Results" MODIFIED="1760979052477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$pytest_in_selenium_web_automation_fixtures_py.coverage" NAME="pytest in selenium_web_automation_fixtures.py Coverage Results" MODIFIED="1757446944170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
-    <SUITE FILE_PATH="coverage/Testautomation$pytest_for_test_registration_test_create_account.coverage" NAME="pytest for test_registration.test_create_account Coverage Results" MODIFIED="1761821425604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests" />
+    <SUITE FILE_PATH="coverage/Testautomation$pytest_for_test_registration_test_create_account.coverage" NAME="pytest for test_registration.test_create_account Coverage Results" MODIFIED="1762219630388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Playwright_Pytest_Project_GroceryMate/tests" />
     <SUITE FILE_PATH="coverage/Testautomation$excercise_a.coverage" NAME="excercise_a Coverage Results" MODIFIED="1759243867641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Playwright" />
     <SUITE FILE_PATH="coverage/Testautomation$selenium_web_automation_login.coverage" NAME="selenium_web_automation_login Coverage Results" MODIFIED="1760972734730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test automation/Selenium" />
     <SUITE FILE_PATH="coverage/Testautomation$.coverage" NAME=" Coverage Results" MODIFIED="1756158678094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

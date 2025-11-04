@@ -1,5 +1,5 @@
 from playwright.sync_api import sync_playwright
-from system_config import BROWSER_CONFIG, BASE_URL, EXTENDED_TIMEOUT, DEFAULT_TIMEOUT
+from system_config import BROWSER_CONFIG
 import pytest
 
 
@@ -15,3 +15,4 @@ def browser_page():
         yield page
         #aufräumen: browser wieder schließen
         browser.close()
+

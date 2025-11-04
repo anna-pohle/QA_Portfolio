@@ -1,23 +1,24 @@
-from pkg_resources import CHECKOUT_DIST
-
-from pages.authentification_page import AuthPage
-from pages.base_page import EXTENDED_TIMEOUT
-from pages.store_page import StorePage
+from pages.auth_page import AuthPage
+from testdata_config import AuthData
+from system_config import EXTENDED_TIMEOUT
 
 
-def test_create_account(browser_page):
-    test_data = {"email":"palimmm3@web.de", "password":"pommes1", "name":"didi1"}
+def test_create_account_and_login(browser_page):
+    #erfolgreiche Registrierung eines neuen Users
 
+    #Arrange
     auth_page = AuthPage(browser_page)
-    auth_page.login(test_data["email"], test_data["password"])
+    new_user = AuthData.NEW_USER
 
-    homepage = HomePage(browser_page)
-    homepage.gotoStore()
-    storepage = StorePage(browser_page)
-    storepage.addtoCart()
-    storepage.clickCart()
-    checkoutpage = CheckoutPage(browser_page)
-    checkoutpage.checkout()
+    #Act & Assert 1
+    auth_page.create_account(**new_user)
+    assert "auth" in browser_page.url, "Nicht auf der Auth-Seite!"
 
-    # prüfen ob sich die URL zur startseite ändert
+    #Act & Assert 2
+    auth_page.login(
+            email=new_user["email"],
+            password=new_user["password"])
+    # prüfen ob sich die URL zur startseite ändert:
     auth_page.page.wait_for_url("https://grocerymate.masterschool.com/", timeout=EXTENDED_TIMEOUT)
+
+    assert "auth" not in browser_page.url, "Sollte nicht mehr auf Auth-Seite sein"

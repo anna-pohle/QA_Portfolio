@@ -12,11 +12,11 @@ class BasePage:
         self.page.goto(url, timeout=self.timeout)
         self.page.wait_for_load_state("networkidle")
 
-    def click(self, locator: str):
+    def click(self, locator: str) -> Page:
         # Element anklicken
         self.page.locator(locator).click(timeout=self.timeout)
 
-    def fill(self, locator: str, text: str):
+    def fill(self, locator: str, text: str) -> None:
         # Text eingeben
         element = self.page.locator(locator)
         element.fill(text, timeout=self.timeout)
