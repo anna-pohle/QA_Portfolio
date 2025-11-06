@@ -1,35 +1,29 @@
-import uuid
+from framework.data_objects import User, Address, PaymentCard
+from framework.utils import FileUtils
 
 class AuthData:
-    EXISTING_USER = {"email":"test16@web.de", "password":"test16"}
-    INVALID_USER = {"email":"test16@web.de", "password":"test23"}
+    #Testdaten für Registrierung & Login
+
+    # Lade YAML beim Import; gibt dict-format aus
+    _yaml_data = FileUtils.read_yaml("testuser_data.yaml")
+
+    # Erstelle Testuser-Datenobjekte; entpackt das dict
+    EXISTING_USER = User(**_yaml_data['existing_user'])
+    INVALID_USER = User(**_yaml_data['invalid_user'])
 
     @staticmethod
-    def NEW_USER() -> dict:
-        #generiert bei jedem Zugriff neue Userdaten
-        unique_id = str(uuid.uuid4())[:8]  # Erste 8 Ziffern aus dem aktuellen timestamp
-        return {"email":f"testuser_{unique_id}@web.de", "password":"pommes12", "name":"didi"}
+    def new_user() -> User:
+        """Generiert neuen User bei jedem Aufruf"""
+        return User.generate_new_user()
 
 
 class CheckoutData:
     #Testdaten für Checkout
-    VALID_ADDRESS = {
-        "street": "Hauptstraße 123",
-        "city": "Leipzig",
-        "postal_code": "04103"
-    }
 
-    VALID_PAYMENT = {
-        "card_number": "4111111111111111",  # Test-Kreditkarte
-        "name_on_card": "Max Mustermann",
-        "expiration": "12/2025",
-        "cvv": "123"
-    }
+    # Lade YAML beim Import; gibt dict-format aus
+    _yaml_data = FileUtils.read_yaml("testcheckout_data.yaml")
 
-    # Alternative Testdaten für verschiedene Szenarien
-    INVALID_CARD = {
-        "card_number": "1234",
-        "name_on_card": "Test User",
-        "expiration": "01/2020",  # Abgelaufen
-        "cvv": "999"
-    }
+    # Erstelle Checkout-Datenobjekte aus YAML; entpackt das dict
+    VALID_ADDRESS = Address(**_yaml_data['valid_address'])
+    VALID_PAYMENT = PaymentCard(**_yaml_data['valid_payment'])
+    INVALID_CARD = PaymentCard(**_yaml_data['invalid_card'])

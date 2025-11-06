@@ -4,19 +4,16 @@ from typing import Any, Dict
 
 
 class FileUtils:
-    """Utilities für Datei-Operationen"""
+    #Utilities für Datei-Operationen
 
     @staticmethod
     def read_yaml(file_path: str) -> Dict[str, Any]:
         """
         Liest YAML-Datei und gibt Dictionary zurück
-
         Args:
             file_path: Pfad zur YAML-Datei
-
         Returns:
             Dictionary mit YAML-Inhalten
-
         Raises:
             FileNotFoundError: Wenn Datei nicht existiert
             yaml.YAMLError: Wenn YAML ungültig ist
@@ -34,7 +31,7 @@ class FileUtils:
 
 
 class DateUtils:
-    """Utilities für Datums-Operationen"""
+    #Utilities für Datums-Operationen
 
     @staticmethod
     def get_date_x_years_ago(years: int) -> str:
@@ -45,13 +42,13 @@ class DateUtils:
 
     @staticmethod
     def get_current_timestamp() -> str:
-        """Gibt aktuellen Unix-Timestamp zurück"""
+        #Gibt aktuellen Unix-Timestamp zurück
         import time
         return str(int(time.time()))
 
 
 class StringUtils:
-    """Utilities für String-Operationen"""
+    #Utilities für String-Operationen
 
     @staticmethod
     def generate_unique_email(domain: str = "test.com") -> str:
@@ -62,7 +59,7 @@ class StringUtils:
 
     @staticmethod
     def generate_random_string(length: int = 10) -> str:
-        """Generiert zufälligen String"""
+        #Generiert zufälligen String
         import random
         import string
         return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
