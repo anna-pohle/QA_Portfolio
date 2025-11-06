@@ -1,5 +1,10 @@
-from pages.base_page import BasePage
-from pages.home_page import HomePage
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from pages.base_page import BasePage
+    from pages.home_page import HomePage
+
 
 class ProductPage(BasePage):
     def __init__(self, page):

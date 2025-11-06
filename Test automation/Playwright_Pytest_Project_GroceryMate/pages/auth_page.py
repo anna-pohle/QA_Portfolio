@@ -1,7 +1,11 @@
-# registration page elements & actions
-
+from __future__ import annotations
+from typing import TYPE_CHECKING
 from pages.base_page import BasePage
 from pages.home_page import HomePage
+if TYPE_CHECKING:
+    from pages.home_page import HomePage
+
+
 
 class AuthPage(BasePage):
     #Klassenattribut
@@ -15,7 +19,8 @@ class AuthPage(BasePage):
         self.password_input_field = self.page.locator("input[type='password']")
         self.name_input_field = self.page.get_by_placeholder("Full Name")
 
-        self.sign_in_button = self.page.get_by_role("button", name="Sign in")
+        self.sign_in_button = self.page.get_by_role("button", name="Sign In")
+        self.sign_up_button = self.page.get_by_role("button", name="Sign Up")
         self.create_account_link = self.page.get_by_role("link", name="Create a new account")
         self.logout_button = self.page.get_by_role("button", name="Logout")
 
@@ -37,7 +42,7 @@ class AuthPage(BasePage):
         self.email_input_field.fill(email)
         self.password_input_field.fill(password)
         self.name_input_field.fill(name)
-        self.sign_in_button.click()
+        self.sign_up_button.click()
         return self
 
     def logout(self, logout_button) -> AuthPage:

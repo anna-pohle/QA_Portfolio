@@ -1,8 +1,12 @@
-from pages.base_page import BasePage
-from pages.store_page import StorePage
-from pages.auth_page import AuthPage
-from components.header import Header
+from __future__ import annotations
+from typing import TYPE_CHECKING
 from components.navbar import Navbar
+from components.header import Header
+from pages.base_page import BasePage
+
+if TYPE_CHECKING:
+    from pages.store_page import StorePage
+    from pages.auth_page import AuthPage
 
 class HomePage(BasePage):
     URL = "https://grocerymate.masterschool.com"

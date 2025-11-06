@@ -1,8 +1,13 @@
-from pages.base_page import BasePage
-from pages.checkout_page import CheckoutPage
-from pages.product_page import ProductPage
+from __future__ import annotations
+from typing import TYPE_CHECKING
 from components.navbar import Navbar
 from components.header import Header
+
+
+if TYPE_CHECKING:
+    from pages.base_page import BasePage
+    from pages.checkout_page import CheckoutPage
+    from pages.product_page import ProductPage
 
 
 class StorePage(BasePage):
