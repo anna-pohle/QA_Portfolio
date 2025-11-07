@@ -1,4 +1,6 @@
-from framework.data_objects import User, Address, PaymentCard
+from framework.data_object_user import User
+from framework.data_objects_address import Address
+from framework.data_object_paymentdata import PaymentCard
 from framework.utils import FileUtils
 
 class AuthData:
