@@ -28,7 +28,7 @@ class CheckoutPage(BasePage):
         self.buy_now_button = page.get_by_role("button", name="Buy now")
 
     def fill_address(self, street: str, city: str, postal_code: str): #-> CheckoutPage:
-        # Füllt die Adressfelder aus"
+        # Füllt die Adressfelder aus
         self.street_input.fill(street)
         self.city_input.fill(city)
         self.postal_code_input.fill(postal_code)

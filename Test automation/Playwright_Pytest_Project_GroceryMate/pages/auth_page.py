@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from pages.base_page import BasePage
 from pages.home_page import HomePage
+
 if TYPE_CHECKING:
     from pages.home_page import HomePage
 
@@ -39,9 +40,9 @@ class AuthPage(BasePage):
     def create_account(self, email, password, name) -> AuthPage :
         self.navigate(self.URL)
         self.create_account_link.click()
+        self.name_input_field.fill(name)
         self.email_input_field.fill(email)
         self.password_input_field.fill(password)
-        self.name_input_field.fill(name)
         self.sign_up_button.click()
         return self
 
