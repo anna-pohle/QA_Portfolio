@@ -7,8 +7,3 @@ invalid_user:
   email: "test16@web.de"
   password: "wrong_password"
   name: "Invalid User"
-
-admin_user:
-  email: "admin@test.com"
-  password: "AdminPass123"
-  name: "Admin"
