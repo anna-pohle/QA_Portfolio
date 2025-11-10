@@ -6,7 +6,6 @@ class TestUsers:
     """Vordefinierte User für Tests"""
     EXISTING = User.from_config('existing_user')
     INVALID = User.from_config('invalid_user')
-    ADMIN = User.from_config('admin_user')
 
 
 class TestCheckout:

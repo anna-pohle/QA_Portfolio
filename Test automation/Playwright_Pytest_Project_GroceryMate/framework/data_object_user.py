@@ -1,7 +1,10 @@
 from dataclasses import dataclass
 from typing import Optional
 from framework.utils import FileUtils, StringUtils
+from pathlib import Path
 
+PROJECT_ROOT = Path(__file__).parent.parent
+YAML_PATH = PROJECT_ROOT / "testdata" / "registration_data.yaml"
 
 @dataclass
 class User:
@@ -16,7 +19,7 @@ class User:
         Holt Daten aus YAML und macht daraus ein User-Objekt
         """
         # 1. Liest die YAML-Datei → gibt ein Dict zurück
-        yaml_dict = FileUtils.read_yaml("registration_data.yaml")
+        yaml_dict = FileUtils.read_yaml(str(YAML_PATH))
 
         # 2. Hole die richtigen Daten raus
         user_data = yaml_dict[config_key]  # z.B. yaml_dict['existing_user']

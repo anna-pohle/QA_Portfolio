@@ -1,5 +1,6 @@
 from pages.auth_page import AuthPage
-from tests.testdata_config import AuthData
+from framework.data_object_user import User
+from framework.test_data import TestUsers
 from system_config import BASE_URL
 
 def test_create_account(browser_page):
@@ -12,14 +13,10 @@ def test_create_account(browser_page):
     """
     # Arrange
     auth_page = AuthPage(browser_page)
-    new_user = AuthData.new_user()
+    new_user = User.generate_new_user()
 
     # Act: Account erstellen (navigiert intern zur auth-page)
-    auth_page.create_account(
-        email=new_user.email,
-        password=new_user.password,
-        name=new_user.name
-    )
+    auth_page.create_account(new_user)
 
     # Assert
     success_toast = browser_page.locator("text=Registration successful")
@@ -35,11 +32,11 @@ def test_login(browser_page):
 
     #Arrange
     auth_page = AuthPage(browser_page)
-    existing_user = AuthData.EXISTING_USER
+    existing_user = TestUsers.EXISTING
 
     #Act:
     auth_page.go_to_login()
-    homepage = auth_page.login(existing_user.email, existing_user.password)
+    homepage = auth_page.login(existing_user)
 
     # Assert: prüfen ob die Homepage geladen wird
     homepage.page.wait_for_url(BASE_URL)
