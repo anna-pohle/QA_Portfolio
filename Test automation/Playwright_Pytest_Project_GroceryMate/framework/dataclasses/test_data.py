@@ -1,6 +1,6 @@
-from framework.data_object_user import User
-from framework.data_objects_address import Address
-from framework.data_object_paymentdata import PaymentCard
+from framework.dataclasses.data_object_user import User
+from framework.dataclasses.data_objects_address import Address
+from framework.dataclasses.data_object_paymentdata import PaymentCard
 
 class TestUsers:
     """Vordefinierte User für Tests"""

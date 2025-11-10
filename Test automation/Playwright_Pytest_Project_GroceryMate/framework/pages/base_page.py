@@ -1,5 +1,5 @@
 from playwright.sync_api import Page
-from system_config import BASE_URL, BROWSER_CONFIG
+from framework.system_config import BASE_URL, BROWSER_CONFIG
 
 class BasePage:
     def __init__(self, page: Page):

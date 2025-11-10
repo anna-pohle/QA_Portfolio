@@ -1,12 +1,12 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
-from components.navbar import Navbar
-from components.header import Header
-from pages.base_page import BasePage
+from framework.pages.components.navbar import Navbar
+from framework.pages.components.header import Header
+from framework.pages.base_page import BasePage
 
 if TYPE_CHECKING:
-    from pages.store_page import StorePage
-    from pages.auth_page import AuthPage
+    from framework.pages.store_page import StorePage
+    from framework.pages.auth_page import AuthPage
 
 class HomePage(BasePage):
     URL = "https://grocerymate.masterschool.com"

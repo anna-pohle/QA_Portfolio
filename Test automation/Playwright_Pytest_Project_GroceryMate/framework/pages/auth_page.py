@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
-from pages.base_page import BasePage
-from pages.home_page import HomePage
-from framework.data_object_user import User
+from framework.pages.base_page import BasePage
+from framework.pages.home_page import HomePage
+from framework.dataclasses.data_object_user import User
 
 if TYPE_CHECKING:
-    from pages.home_page import HomePage
+    from framework.pages.home_page import HomePage
 
 
 
@@ -45,6 +45,8 @@ class AuthPage(BasePage):
         self.email_input_field.fill(user.email)
         self.password_input_field.fill(user.password)
         self.sign_up_button.click()
+        success_toast = self.page.locator("text=Registration successful")
+        success_toast.wait_for(state="visible")
         return self
 
     def logout(self) -> AuthPage:

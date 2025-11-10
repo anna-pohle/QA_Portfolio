@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 from typing import Optional
-from framework.utils import FileUtils, StringUtils
+from framework.utils.utils import FileUtils, StringUtils
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).parent.parent
-YAML_PATH = PROJECT_ROOT / "testdata" / "registration_data.yaml"
+PROJECT_ROOT = Path(__file__).parent.parent.parent
+YAML_PATH = PROJECT_ROOT / "tests" / "testdata"/ "registration_data.yaml"
 
 @dataclass
 class User:

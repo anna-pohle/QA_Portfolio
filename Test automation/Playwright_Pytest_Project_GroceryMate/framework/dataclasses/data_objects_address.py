@@ -1,9 +1,9 @@
 from dataclasses import dataclass
-from framework.utils import FileUtils
+from framework.utils.utils import FileUtils
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).parent.parent
-YAML_PATH = PROJECT_ROOT / "testdata" / "checkout_data.yaml"
+PROJECT_ROOT = Path(__file__).parent.parent.parent
+YAML_PATH = PROJECT_ROOT / "tests" / "testdata"/ "checkout_data.yaml"
 
 @dataclass
 class Address:

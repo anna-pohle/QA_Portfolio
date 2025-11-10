@@ -1,8 +1,3 @@
-from pages.base_page import BasePage
-from pages.checkout_page import CheckoutPage
-from pages.home_page import HomePage
-from pages.store_page import StorePage
-
 @pytest.fixture
 def logged_in_user(page):
     # Eingeloggter User

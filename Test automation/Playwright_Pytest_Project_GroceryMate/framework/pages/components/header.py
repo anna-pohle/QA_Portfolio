@@ -2,9 +2,9 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from pages.checkout_page import CheckoutPage
-    from pages.auth_page import AuthPage
-    from pages.product_page import ProductPage
+    from framework.pages.checkout_page import CheckoutPage
+    from framework.pages.auth_page import AuthPage
+    from framework.pages.product_page import ProductPage
 
 
 class Header:

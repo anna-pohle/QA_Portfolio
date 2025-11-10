@@ -2,8 +2,8 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from pages.store_page import StorePage
-    from pages.home_page import HomePage
+    from framework.pages.store_page import StorePage
+    from framework.pages.home_page import HomePage
 
 class Navbar:
     def __init__(self, page):

@@ -1,5 +1,5 @@
 from playwright.sync_api import sync_playwright
-from system_config import BROWSER_CONFIG
+from framework.system_config import BROWSER_CONFIG
 import pytest
 
 
