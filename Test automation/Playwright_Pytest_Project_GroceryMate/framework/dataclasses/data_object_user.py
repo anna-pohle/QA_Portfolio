@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import Optional
-from framework.utils.utils import FileUtils, StringUtils
+from framework.utils.StringUtils import StringUtils
+from framework.utils.FileUtils import FileUtils
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).parent.parent.parent
