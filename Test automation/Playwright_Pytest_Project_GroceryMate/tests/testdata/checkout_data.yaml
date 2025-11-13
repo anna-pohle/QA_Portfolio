@@ -1,0 +1,16 @@
+valid_address:
+  street: "Hauptstraße 123"
+  city: "Leipzig"
+  postal_code: "04103"
+
+valid_payment:
+  card_number: "4111111111111111"
+  name_on_card: "Max Mustermann"
+  expiration: "12/2025"
+  cvv: "123"
+
+invalid_card:
+  card_number: "1234"
+  name_on_card: "Test User"
+  expiration: "01/2020"
+  cvv: "999"

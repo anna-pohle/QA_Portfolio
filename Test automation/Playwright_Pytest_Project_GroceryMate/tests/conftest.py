@@ -1,5 +1,5 @@
 from playwright.sync_api import sync_playwright
-from pages.authentification_page import AuthPage
+from framework.system_config import BROWSER_CONFIG
 import pytest
 
 
@@ -7,8 +7,8 @@ import pytest
 #öffne browser & stelle ein page Objekt zur Verfügung
 def browser_page():
     with sync_playwright() as playwright:
-        #öffne browser
-        browser = playwright.chromium.launch(headless=False, slow_mo=50)
+        #öffne Browser
+        browser = playwright.chromium.launch(**BROWSER_CONFIG)
         page = browser.new_page()
 
         #stelle page zur Verfügung
@@ -16,7 +16,3 @@ def browser_page():
         #aufräumen: browser wieder schließen
         browser.close()
 
-@pytest.fixture
-# Nimm das Page-Objekt & mach daraus eine fertige AuthPage
-def auth_page(browser_page):
-    return AuthPage

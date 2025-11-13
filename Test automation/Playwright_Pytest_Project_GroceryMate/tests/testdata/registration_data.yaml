@@ -1,0 +1,9 @@
+existing_user:
+  email: "test16@web.de"
+  password: "test16"
+  name: "Existing User"
+
+invalid_user:
+  email: "test16@web.de"
+  password: "wrong_password"
+  name: "Invalid User"
