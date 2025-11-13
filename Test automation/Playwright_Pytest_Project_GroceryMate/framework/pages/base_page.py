@@ -1,8 +1,9 @@
 from playwright.sync_api import Page
 from framework.system_config import BASE_URL, BROWSER_CONFIG, EXTENDED_TIMEOUT
 
+
 class BasePage:
-    URL = None # Muss von Subclass definiert werden
+    URL = None  # Muss von Subclass definiert werden
 
     def __init__(self, page: Page):
         self.page = page

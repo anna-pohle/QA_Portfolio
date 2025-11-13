@@ -11,23 +11,25 @@ if TYPE_CHECKING:
 
 
 class AuthPage(BasePage):
-    #Klassenattribut
+    # Klassenattribut
     URL = f"{BASE_URL}/auth"
 
     def __init__(self, page):
         super().__init__(page)
 
-        #Locators
+        # Locators
         self.email_input_field = self.page.locator("input[type='email']")
         self.password_input_field = self.page.locator("input[type='password']")
         self.name_input_field = self.page.get_by_placeholder("Full Name")
 
         self.sign_in_button = self.page.get_by_role("button", name="Sign In")
         self.sign_up_button = self.page.get_by_role("button", name="Sign Up")
-        self.create_account_link = self.page.get_by_role("link", name="Create a new account")
+        self.create_account_link = self.page.get_by_role(
+            "link", name="Create a new account"
+        )
         self.logout_button = self.page.get_by_role("button", name="Logout")
 
-    #Methods
+    # Methods
     def go_to_login(self) -> AuthPage:
         super().navigate(self.URL)
         return AuthPage(self.page)
@@ -39,7 +41,7 @@ class AuthPage(BasePage):
         self.sign_in_button.click()
         return HomePage(self.page)
 
-    def create_account(self, user:User) -> AuthPage :
+    def create_account(self, user: User) -> AuthPage:
         self.navigate(self.URL)
         self.create_account_link.click()
         self.name_input_field.fill(user.name)

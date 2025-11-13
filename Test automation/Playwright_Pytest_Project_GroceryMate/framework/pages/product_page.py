@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
+from framework.pages.base_page import BasePage
 from framework.system_config import BASE_URL, EXTENDED_TIMEOUT
 
 
@@ -22,7 +23,7 @@ class ProductPage(BasePage):
 
     # Methoden
     def get_current_product_id(self) -> str:
-        #extrahiert product_id aus aktueller URL unter nutzung der Methode aus der BasePage
+        # extrahiert product_id aus aktueller URL unter Nutzung der Methode aus der BasePage
         return self._extract_product_id_from_url()
 
     def is_loaded(self, expected_product_id: str = None) -> bool:
@@ -44,7 +45,7 @@ class ProductPage(BasePage):
         except TimeoutError:
             return False
 
-    def select_rating(self, stars: int) -> ProductPage:
+    def select_rating(self, stars: int) -> "ProductPage":
         # Wählt eine Sternebewertung zwischen 1 und 5
         if not 1 <= stars <= 5:
             raise ValueError("Rating muss zwischen 1 und 5 sein")
@@ -52,12 +53,12 @@ class ProductPage(BasePage):
         self.review_stars.nth(stars - 1).click()
         return ProductPage(self.page)
 
-    def write_review(self, text: str) -> ProductPage:
+    def write_review(self, text: str) -> "ProductPage":
         # Füllt Review-Textfeld aus
         self.review_textarea.fill(text)
         return ProductPage(self.page)
 
-    def rate_product(self, stars: int, text: str="") -> HomePage:
+    def rate_product(self, stars: int, text: str = "") -> "HomePage":
         self.select_rating(stars)
         self.write_review(text)
         self.send_button.click()

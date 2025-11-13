@@ -1,12 +1,12 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
+from framework.pages.base_page import BasePage
 from framework.pages.components.navbar import Navbar
 from framework.pages.components.header import Header
 from framework.pages.product_page import ProductPage
 from framework.system_config import BASE_URL, EXTENDED_TIMEOUT
 
 if TYPE_CHECKING:
-    from framework.pages.base_page import BasePage
     from framework.pages.checkout_page import CheckoutPage
     from framework.pages.product_page import ProductPage
 
@@ -26,9 +26,10 @@ class StorePage(BasePage):
         Alle Buttons und Textfelder, die auf diese Funktion zugreifen, suchen nicht auf
         der gesamten Seite, sondern nur auf der Produktkarte mit dem angegebenen Produktnamen.
         """
-        product_card = self.page.locator(".card").filter(has=self.page.get_by_alt_text(product_name))
+        product_card = self.page.locator(".card").filter(
+            has=self.page.get_by_alt_text(product_name)
+        )
         return product_card
-
 
     def _click_product_image_and_get_page(self, product_card_locator) -> ProductPage:
         """
@@ -58,7 +59,7 @@ class StorePage(BasePage):
         return product_page
 
     # NAVIGATIONS-METHODEN
-    def go_to_storepage(self) -> StorePage:
+    def go_to_storepage(self) -> "StorePage":
         super().navigate(self.URL)  # Direkter Aufruf möglich
         return self
 
@@ -68,21 +69,20 @@ class StorePage(BasePage):
         product_card.click()
         return ProductPage(self.page)
 
-    def go_to_cart(self) -> CheckoutPage:
+    def go_to_cart(self) -> "CheckoutPage":
         # Öffnet die Warenkorb-Ansicht
         self.header.click_cart()
         return CheckoutPage(self.page)
 
-
     # INTERAKTIONS-METHODEN
-    def add_to_cart(self, product_name: str, quantity: int = 1) -> StorePage:
+    def add_to_cart(self, product_name: str, quantity: int = 1) -> "StorePage":
         # Fügt die gewünschte Menge (default =1) zum Warenkorb hinzu
         product_card = self._get_product_card(product_name)
         product_card.locator("input.quantity").fill(str(quantity))
         product_card.get_by_role("button", name="Add to Cart").click()
         return StorePage(self.page)
 
-    def add_to_favorites(self, product_name: str) -> StorePage:
+    def add_to_favorites(self, product_name: str) -> "StorePage":
         product_card = self._get_product_card(product_name)
         product_card.get_by_role("button", name="❤").click()
         return StorePage(self.page)
