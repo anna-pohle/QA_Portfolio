@@ -39,3 +39,13 @@ class BasePage:
         except TimeoutError:
             return False
 
+    #HELPER-METHODE (privat!)
+    def _extract_product_id_from_url(self) -> str:
+        """
+        Extrahiert product_id aus aktueller URL (wenn vorhanden)
+        Funktioniert in jeder Page, sobald URL /product/{id} enthält
+        """
+        current_url = self.page.url
+        if "/product/" not in current_url:
+            raise ValueError(f"URL enthält kein Produktmuster: {current_url}")
+        return current_url.split("/product/")[-1].split("?")[0]

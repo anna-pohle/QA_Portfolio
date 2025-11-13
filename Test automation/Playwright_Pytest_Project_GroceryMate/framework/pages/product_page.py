@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
+from framework.system_config import BASE_URL, EXTENDED_TIMEOUT
 
 
 if TYPE_CHECKING:
@@ -8,10 +9,11 @@ if TYPE_CHECKING:
 
 
 class ProductPage(BasePage):
-    URRl = f"{BASE_URL}/product/{product_id}"
+    URL = f"{BASE_URL}/product"
 
-    def __init__(self, page):
+    def __init__(self, page, product_id: str = None):
         super().__init__(page)
+        self.product_id = product_id
 
         # Locator
         self.review_stars = page.locator(".interactive-rating .star")
@@ -19,6 +21,29 @@ class ProductPage(BasePage):
         self.send_button = page.get_by_role("button", name="Send")
 
     # Methoden
+    def get_current_product_id(self) -> str:
+        #extrahiert product_id aus aktueller URL unter nutzung der Methode aus der BasePage
+        return self._extract_product_id_from_url()
+
+    def is_loaded(self, expected_product_id: str = None) -> bool:
+        # Prüft, ob jeweilige product page geladen wurde
+        # Optionales Argument: eine spezifische Produkt-ID
+        # Nutzt self.product_id wenn kein Parameter übergeben
+        check_id = expected_product_id or self.product_id
+
+        try:
+            if check_id:
+                # Prüfe spezifische URL
+                expected_url = f"{self.URL}/{check_id}"
+                self.page.wait_for_url(expected_url, timeout=EXTENDED_TIMEOUT)
+            else:
+                # Prüfe Pattern (beliebige ID)
+                self.page.wait_for_url(f"{self.URL}/*", timeout=EXTENDED_TIMEOUT)
+            return True
+
+        except TimeoutError:
+            return False
+
     def select_rating(self, stars: int) -> ProductPage:
         # Wählt eine Sternebewertung zwischen 1 und 5
         if not 1 <= stars <= 5:
