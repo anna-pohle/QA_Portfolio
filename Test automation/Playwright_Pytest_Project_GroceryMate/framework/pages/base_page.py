@@ -1,7 +1,9 @@
 from playwright.sync_api import Page
-from framework.system_config import BASE_URL, BROWSER_CONFIG
+from framework.system_config import BASE_URL, BROWSER_CONFIG, EXTENDED_TIMEOUT
 
 class BasePage:
+    URL = None # Muss von Subclass definiert werden
+
     def __init__(self, page: Page):
         self.page = page
         self.timeout = BROWSER_CONFIG.get("timeout")
@@ -24,4 +26,16 @@ class BasePage:
     def is_visible(self, locator: str) -> bool:
         # Sichtbarkeits-Check
         return self.page.locator(locator).is_visible(timeout=self.timeout)
+
+    def is_loaded(self) -> bool:
+        # Prüft ob die Page geladen ist anhand ihrer URL, Subpages müssen URL-Attribut definieren
+        if self.URL is None:
+            raise NotImplementedError("Subclass muss URL definieren")
+
+        try:
+            # Prüfe URL
+            self.page.wait_for_url(self.URL, timeout=EXTENDED_TIMEOUT)
+            return True
+        except TimeoutError:
+            return False
 

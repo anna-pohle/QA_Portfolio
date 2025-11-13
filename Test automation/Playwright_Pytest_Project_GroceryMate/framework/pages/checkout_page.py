@@ -1,4 +1,5 @@
 from __future__ import annotations
+from framework.system_config import BASE_URL
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -7,7 +8,7 @@ if TYPE_CHECKING:
 
 
 class CheckoutPage(BasePage):
-    URL = "https://grocerymate.masterschool.com/checkout"
+    URL = f"{BASE_URL}/checkout"
 
     def navigate(self, URL): #-> CheckoutPage:
         # Option, die Seite direkt via URL aufzurufen

@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from framework.pages.components.navbar import Navbar
 from framework.pages.components.header import Header
+from framework.system_config import BASE_URL
 
 
 if TYPE_CHECKING:
@@ -11,7 +12,7 @@ if TYPE_CHECKING:
 
 
 class StorePage(BasePage):
-    URL = "https://grocerymate.masterschool.com/store"
+    URL = f"{BASE_URL}/store"
 
     def __init__(self, page):
         super().__init__(page)

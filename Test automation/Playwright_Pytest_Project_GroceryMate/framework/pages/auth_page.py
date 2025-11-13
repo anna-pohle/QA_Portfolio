@@ -3,6 +3,7 @@ from typing import TYPE_CHECKING
 from framework.pages.base_page import BasePage
 from framework.pages.home_page import HomePage
 from framework.dataclasses.data_object_user import User
+from framework.system_config import BASE_URL
 
 if TYPE_CHECKING:
     from framework.pages.home_page import HomePage
@@ -11,7 +12,7 @@ if TYPE_CHECKING:
 
 class AuthPage(BasePage):
     #Klassenattribut
-    URL = "https://grocerymate.masterschool.com/auth"
+    URL = f"{BASE_URL}/auth"
 
     def __init__(self, page):
         super().__init__(page)
