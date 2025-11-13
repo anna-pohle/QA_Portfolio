@@ -10,8 +10,8 @@ if TYPE_CHECKING:
 class Header:
     def __init__(self, page):
         self.page = page
-        self.auth_button = page.locator('svg path[d*="M12 2a5"]').locator("..")
-        self.cart_icon = page.locator('svg path[d*="M0 2.5A"]').locator("..")
+        self.auth_button = page.locator("div.social-icon-cont div.headerIcon").nth(0)
+        self.cart_icon = page.locator("div.social-icon-cont div.headerIcon").nth(2)
         self.search_field = page.get_by_role("textbox", name="Search Products")
         self.suggestion_item = page.locator(".suggestion-item")
 
