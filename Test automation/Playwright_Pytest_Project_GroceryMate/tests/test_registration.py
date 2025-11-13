@@ -35,5 +35,4 @@ def test_login(browser_page):
     homepage = auth_page.login(existing_user)
 
     # Assert: prüfen ob die Homepage geladen wird
-    homepage.page.wait_for_url(BASE_URL)
-    assert homepage.page.url == BASE_URL, f"Erwartete URL: {BASE_URL}, aktuelle URL: {homepage.page.url}"
+    assert homepage.is_loaded(BASE_URL), f"Erwartete URL: {BASE_URL}, aktuelle URL: {homepage.page.url}"
