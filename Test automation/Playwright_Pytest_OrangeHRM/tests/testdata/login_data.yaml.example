@@ -1,0 +1,13 @@
+# =============================================================================
+# Login credentials for OrangeHRM tests
+#
+# IMPORTANT: This file is a template!
+# Copy it to login_data.yaml and fill in your credentials:
+#     cp tests/testdata/login_data.yaml.example tests/testdata/login_data.yaml
+#
+# The actual login_data.yaml is in .gitignore and must NOT be committed!
+# =============================================================================
+
+admin_user:
+  username: "your_admin_username"
+  password: "your_admin_password"
