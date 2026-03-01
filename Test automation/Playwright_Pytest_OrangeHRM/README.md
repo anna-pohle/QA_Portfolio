@@ -17,20 +17,18 @@ The architecture, design patterns, and testing strategies shown here are adapted
 - Automatic screenshot and Playwright trace capture on failure
 - Structured logging throughout all page objects
 
-## Tech Stack
+## Prerequisites
 
-- **Language:** Python 3.12+
-- **Test Framework:** pytest
-- **Browser Automation:** Playwright
-- **Pattern:** Page Object Model (POM)
+- Python 3.12+
+- Chrome/Chromium Browser
 
 ## Setup
 
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
-cd qa_portfolio_sanitized
+git clone https://github.com/anna-pohle/QA_Portfolio.git
+cd "QA_Portfolio/Test automation/Playwright_Pytest_OrangeHRM"
 ```
 
 ### 2. Create virtual environment
@@ -92,6 +90,38 @@ playwright show-trace test-results/traces/<filename>.zip
 
 The framework provides two strategies for test data:
 
+### Overview
+
+```
++---------------------------------------------------------------------------+
+|                           TEST SESSION                                    |
++---------------------------------------------------------------------------+
+|                                                                           |
+|  +---------+ +---------+ +---------+ +---------+                          |
+|  | Test 1  | | Test 2  | | Test 3  | | Test 4  |                          |
+|  | Login   | | Login   | | Leave   | | Leave   |                          |
+|  | (valid) | | (empty) | | (1 day) | | (multi) |                          |
+|  +----+----+ +----+----+ +----+----+ +----+----+                          |
+|       |           |           |           |                               |
+|       v           v           v           v                               |
+|  +---------+ +---------+ +-------------------------------+                |
+|  | test_   | | (no     | |      session_employee         |                |
+|  | employee| | fixture)| |   (session-scoped)            |                |
+|  |(function| |         | |                               |                |
+|  +---------+ +---------+ |  +-----+ +-----+ +-----+     |                |
+|  | Created |             | | Day | | Day | | Day |     |                |
+|  | Used    |             | |  1  | |  2  | |  3  |     |                |
+|  | Deleted |             | +-----+ +-----+ +-----+     |                |
+|  +---------+             |                               |                |
+|                          |  One employee, many days      |                |
+|                          +-------------------------------+                |
+|                                         |                                 |
+|                                         v                                 |
+|                                 Session end:                              |
+|                                 Employee is deleted                       |
++---------------------------------------------------------------------------+
+```
+
 ### Function-Scoped Fixtures (Standard)
 
 For each test a **new employee is created and deleted afterwards**.
@@ -106,6 +136,14 @@ def test_search_employee(browser_page, admin_credentials, test_employee):
         .search_by_employee_name(test_employee.full_name)
     )
 ```
+
+**Available fixtures:**
+| Fixture | Scope | Purpose |
+|---------|-------|---------|
+| `test_employee` | function | Fresh employee per test, deleted after |
+| `session_employee` | session | Persistent employee for shared state |
+| `admin_credentials` | session | Admin login tuple (username, password) |
+| `browser_page` | function | Playwright Page with tracing enabled |
 
 ### Session-Scoped Fixture (Singleton)
 
@@ -133,7 +171,19 @@ def test_assign_leave(browser_page, admin_credentials, session_employee):
         )
 ```
 
+**When to use the Singleton?**
+- Tests that assign leave (each test needs its own date)
+- Performance-critical test suites (employee creation saves ~2 sec per test)
+- Tests that build on each other
+
+**Day counter:**
+| Method | Start value | Example |
+|--------|-------------|---------|
+| `get_next_future_day()` | 1 (tomorrow) | 1 -> 2 -> 3 -> ... |
+
 ## Pytest Markers
+
+Tests can be categorized with markers:
 
 ```bash
 # Smoke tests
@@ -148,10 +198,17 @@ pytest -m feature_leave
 pytest -m "smoke and feature_login"
 ```
 
+**Available markers:**
+- `@pytest.mark.smoke` - Quick, critical tests
+- `@pytest.mark.regression` - Full regression suite
+- `@pytest.mark.feature_login` - Login module
+- `@pytest.mark.feature_pim` - PIM / Employee Management module
+- `@pytest.mark.feature_leave` - Leave Management module
+
 ## Project Structure
 
 ```
-qa_portfolio_sanitized/
+Playwright_Pytest_OrangeHRM/
 ├── framework/
 │   ├── dataclasses/               # Data models
 │   │   ├── data_object_employee.py    # Employee dataclass
@@ -214,8 +271,20 @@ LoginPage(browser_page)
     .click_save()
 ```
 
+### Retry Mechanism
+
+Flaky tests are automatically retried once (configured via `--reruns=1`).
+The delay between retries is 2 seconds.
+In `test-results/junit.xml`, reruns are marked as separate `<testcase>` entries.
+
+## Important
+
+**The following files contain sensitive data and are in `.gitignore`:**
+- `tests/testdata/login_data.yaml` (credentials)
+
+These files must **never** be committed to the repository!
+
 ## Notes
 
 - The OrangeHRM demo site resets periodically — test data is temporary
 - Tests use unique names (UUID suffix) to avoid conflicts with other users
-- The retry mechanism (`--reruns=1`) handles occasional demo site instability
