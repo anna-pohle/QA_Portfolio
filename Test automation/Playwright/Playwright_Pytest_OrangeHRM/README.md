@@ -28,7 +28,7 @@ The architecture, design patterns, and testing strategies shown here are adapted
 
 ```bash
 git clone https://github.com/anna-pohle/QA_Portfolio.git
-cd "QA_Portfolio/Test automation/Playwright_Pytest_OrangeHRM"
+cd "QA_Portfolio/Test automation/Playwright/Playwright_Pytest_OrangeHRM"
 ```
 
 ### 2. Create virtual environment
