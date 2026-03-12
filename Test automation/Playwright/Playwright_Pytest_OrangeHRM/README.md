@@ -6,7 +6,7 @@ Playwright-based test automation framework targeting the [OrangeHRM Demo](https:
 
 This is a **portfolio showcase** demonstrating test automation patterns and architecture I developed during professional work on a workforce management application (under NDA).
 
-The architecture, design patterns, and testing strategies shown here are adapted from that real project to target a publicly accessible demo application. This allows me to demonstrate my approach without exposing proprietary code.
+This project was generated with AI assistance (Cursor). The architecture, patterns, and design decisions (POM, component structure, API client pattern, session singleton) are my own.
 
 **What's demonstrated here:**
 - Page Object Model with multi-level inheritance
